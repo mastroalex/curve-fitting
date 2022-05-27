@@ -36,11 +36,13 @@ fitted=fitMySignal(mistery_data,index);
 % Predisporre un ciclo for su un tot di segnali, memorizzando i parametri
 % ottimali in opportune variabili 
 lastSignal=200;
+%lastSignal=57361;
 sigma=zeros(lastSignal,1);
 delta=sigma;
 t_c=sigma;
 a=sigma;
 fs=115e3;
+tic
 parfor i=1:lastSignal
     fitted=fitMySignal(mistery_data,i,'no');
     sigma(i)=fitted.sigma;
@@ -55,7 +57,8 @@ parfor i=1:lastSignal
     t_c(i)=t_c(i)*time_step(end);
     sigma(i)=sigma(i)*time_step(end);
 end
-
+compute_time=toc;
+disp(['Completed in ', num2str(compute_time),' s'])
 %% PLOT
 shape=sigma./delta; % shape parameters
 G=1;                % electric gain 
@@ -102,3 +105,10 @@ figure()
 histogram(diam_corr,50);
 figure()
 scatter(diam_corr,shape)
+xlim([0,2])
+
+%% 
+figure()
+histogram2(diam_corr,shape,'DisplayStyle','tile','ShowEmptyBins','on', ...
+    'NumBins',[n_bin_electric_D,n_bin_sig_ov_del],'XBinLimits',electric_D_norm_lim,'YBinLimits',sig_ov_del_lim);
+colorbar
