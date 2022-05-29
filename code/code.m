@@ -47,7 +47,7 @@ parfor i=1:(lastSignal-firstSignal)
     % scale back
     a(i)=a(i)*max(abs(mistery_data{j})); % scale amplitude with max
     Ns=length(mistery_data{j});
-    time_step=1e3*(0:Ns-1)/fs;  % scale delta and t_c with last time 
+    time_step=1e3*(0:Ns-1)/fs;  % scale delta and t_c with last time % scale μs 
     delta(i)=delta(i)*time_step(end);
     t_c(i)=t_c(i)*time_step(end);
     sigma(i)=sigma(i)*time_step(end);

@@ -47,7 +47,7 @@ parfor i=1:(lastSignal-firstSignal)
     % scale back
     a(i)=a(i)*max(abs(mistery_data{j})); % scale amplitude with max
     Ns=length(mistery_data{j});
-    time_step=1e3*(0:Ns-1)/fs;  % scale delta and t_c with last time 
+    time_step=1e3*(0:Ns-1)/fs;  % scale delta and t_c with last time % scale μs 
     delta(i)=delta(i)*time_step(end);
     t_c(i)=t_c(i)*time_step(end);
     sigma(i)=sigma(i)*time_step(end);
@@ -88,8 +88,8 @@ ylabel('Shape parameters')
 xlim(diam_lim)
 ylim(shape_lim)
 %%
-L=40e-3; %[mm] L=40 [um]
-velocity=L./delta; % where L [um] and delta [s]
+L=40e-6; %[mm] L=40 [um]
+velocity=L./(delta*1e-3); % where L [um] and delta [ms]
 figure();
 scatter(diam,velocity)
  % ATTENZIONE MANC QUALCOSA NELLE UNIT° DI MISURA !!!!
@@ -164,7 +164,7 @@ scatter(diam_corr_family1,shape(index_value_family1),'Color',Color_orange)
 xlim([0,2])
 
 %% WHY THIS VALIUES ARE NORMALIZED ???
-
+%% Test by numltiply for the mean
 figure()
 histogram(diam_corr_family1*mean(diam(index_value_family1)),n_bin,'FaceColor',Color_orange,'EdgeColor','none');
 hold on
@@ -173,12 +173,12 @@ histogram(diam_corr_family3*mean(diam(index_value_family3)),n_bin,'FaceColor',Co
 xlim(diam_lim)
 
 figure()
-scatter(diam_corr_family1*mean(diam(index_value_family1)),shape(index_value_family1),'Color',Color_orange)
+scatter(diam_corr_family1*mean(diam(index_value_family1)),shape(index_value_family1),'MarkerEdgeColor',Color_orange)
 hold on
-scatter(diam_corr_family2*mean(diam(index_value_family2)),shape(index_value_family2),'Color',Color_blue)
-scatter(diam_corr_family3*mean(diam(index_value_family3)),shape(index_value_family3),'Color',Color_green)
+scatter(diam_corr_family2*mean(diam(index_value_family2)),shape(index_value_family2),'MarkerEdgeColor',Color_blue)
+scatter(diam_corr_family3*mean(diam(index_value_family3)),shape(index_value_family3),'MarkerEdgeColor',Color_green)
 
-xlim([0,2])
+xlim(diam_lim)
 
 
 
