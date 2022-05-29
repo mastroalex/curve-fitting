@@ -3,16 +3,22 @@ clear all; close all; clc
 load mistery.mat
 
 %% Signal visualization
-close all
-figure()
+% select index of the signal to plot
+% from 1 to 57361
+signal_to_plot=[5 10 400 700 35698];
+% different marks for different signal
+all_marks = {'o','+','*','x','^','v','>','p','h'};
+signal_visualization_fig=figure();
 hold on
-starting_signal=1;
-ending_signal=5;
-for i=starting_signal:ending_signal
-    plot(mistery_data{i},'*')
+for i=1:length(signal_to_plot)
+    % update the marker from the list
+    marker=all_marks{mod(i,length(all_marks))};
+    % plot the signal of index selected from signal_to_plot
+    % the amplitude is scaled with 1e6 to scale from [A] to [uA]
+    plot(1e6*mistery_data{signal_to_plot(i)},marker)
 end
-ylabel('I_{Diff} [A]')
-xlabel('Distance along channel [\mu M]')
+ylabel('I_{diff} [\mu A]')
+xlabel('Sample')
 %% Fitting (from previous lesson)
 % use like fitMySignal(index,mistery_data,WantPlot)
 % WantPlot to 'no' and no plot
@@ -196,3 +202,9 @@ figure()
 histogram2(diam_corr_family1,shape,'DisplayStyle','tile','ShowEmptyBins','on', ...
     'NumBins',[n_bin_d,n_bin_sig],'XBinLimits',electric_D_norm_lim,'YBinLimits',sig_ov_del_lim);
 colorbar
+
+%% Figures export
+% insert path
+% here is used path from Current Folder referencing path
+path='figs/';
+exportgraphics(figure(signal_visualization_fig),strcat(path,'signal_visualization_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
