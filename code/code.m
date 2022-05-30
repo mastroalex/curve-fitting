@@ -9,8 +9,7 @@ signal_to_plot=[5 10 400 700 35698];
 % different marks for different signal
 all_marks = {'o','+','*','x','^','v','>','p','h'};
 signal_visualization_fig=figure();
-d_nominal=[5.2,6,7]; % nominal bead diameter [um]
-n_bead=length(d_nominal);
+
 
 hold on
 for i=1:length(signal_to_plot)
@@ -70,7 +69,8 @@ shape=sigma./delta; % shape parameters
 G=10.5; % From Errico [um / uA^(1/3)]
 % a is [A] but I need it in uA --> *1e6
 diam=G*(a.*1e6).^(1/3); % electric parameters prop to a^(1/3) [um]
-
+d_nominal=[5.2,6,7]; % nominal bead diameter [um]
+n_bead=length(d_nominal);
 diam_lim=[4.5 10.5];
 shape_lim=[0.15 0.3];
 vel_lim=[0.1 0.5];
@@ -180,39 +180,71 @@ plot(x_data,fitting_valuated)
 
 
 %% 
+p1=fitting(1);
+p2=fitting(2);
+c1=-(p2/p1);
+c2=1/p1;
+
+selected_diameter=[];
+for i=1:n_bead
+selected_diameter=[selected_diameter; selected_value{i}(:,1)];
+end
+
+diam_corr=selected_diameter./(c1+c2*y_data);
+
+figure;
+scatter(diam_corr,y_data)
+xlabel('Corrected electric diameter [\mu m]')
+ylabel('Shape parameters')
+xlim(diam_lim)
+ylim(shape_lim)
+
+% % %  % % %
+
+% % %  % % %
+
+% INSER CORRECTED VDIAMETER AND PLOT
+% % %  % % %
+
+% % %  % % %
+
+% % %  % % %
+
+
+
 % retta y=p1x+p2 -> x=y/p1 - p2/p1 -> - p2/p1 + y/p1
 % c1+c2(shape)
-p1_family1=fit_line_family1(1);
-p2_family1=fit_line_family1(2);
-c1_family1=-(p2_family1/p1_family1);
-c2_family1=1/p1_family1;
-
-diam_corr_family1=diam(index_value_family1)./(c1_family1+c2_family1*shape(index_value_family1));
-
-p1_family2=fit_line_family2(1);
-p2_family2=fit_line_family2(2);
-c1_family2=-(p2_family2/p1_family2);
-c2_family2=1/p1_family2;
-
-diam_corr_family2=diam(index_value_family2)./(c1_family2+c2_family2*shape(index_value_family2));
-
-p1_family3=fit_line_family3(1);
-p2_family3=fit_line_family3(2);
-c1_family3=-(p2_family3/p1_family3);
-c2_family3=1/p1_family3;
-
-diam_corr_family3=diam(index_value_family3)./(c1_family3+c2_family3*shape(index_value_family3));
-
-figure()
-histogram(diam_corr_family1,n_bin,'FaceColor',Color_orange);
-hold on
-histogram(diam_corr_family2,n_bin,'FaceColor',Color_blue);
-histogram(diam_corr_family3,n_bin,'FaceColor',Color_green);
-xlim(diam_lim)
-
-figure()
-scatter(diam_corr_family1,shape(index_value_family1),'Color',Color_orange)
-xlim([0,2])
+% p1_family1=fit_line_family1(1);
+% p2_family1=fit_line_family1(2);
+% c1_family1=-(p2_family1/p1_family1);
+% c2_family1=1/p1_family1;
+% 
+% diam_corr_family1=diam(index_value_family1)./(c1_family1+c2_family1*shape(index_value_family1));
+% 
+% p1_family2=fit_line_family2(1);
+% p2_family2=fit_line_family2(2);
+% c1_family2=-(p2_family2/p1_family2);
+% c2_family2=1/p1_family2;
+% 
+% diam_corr_family2=diam(index_value_family2)./(c1_family2+c2_family2*shape(index_value_family2));
+% 
+% p1_family3=fit_line_family3(1);
+% p2_family3=fit_line_family3(2);
+% c1_family3=-(p2_family3/p1_family3);
+% c2_family3=1/p1_family3;
+% 
+% diam_corr_family3=diam(index_value_family3)./(c1_family3+c2_family3*shape(index_value_family3));
+% 
+% figure()
+% histogram(diam_corr_family1,n_bin,'FaceColor',Color_orange);
+% hold on
+% histogram(diam_corr_family2,n_bin,'FaceColor',Color_blue);
+% histogram(diam_corr_family3,n_bin,'FaceColor',Color_green);
+% xlim(diam_lim)
+% 
+% figure()
+% scatter(diam_corr_family1,shape(index_value_family1),'Color',Color_orange)
+% xlim([0,2])
 
 %% WHY THIS VALIUES ARE NORMALIZED ???
 %% Test by numltiply for the mean
