@@ -9,6 +9,9 @@ signal_to_plot=[5 10 400 700 35698];
 % different marks for different signal
 all_marks = {'o','+','*','x','^','v','>','p','h'};
 signal_visualization_fig=figure();
+d_nominal=[5.2,6,7]; % nominal bead diameter [um]
+n_bead=length(d_nominal);
+
 hold on
 for i=1:length(signal_to_plot)
     % update the marker from the list
@@ -75,6 +78,7 @@ n_bin=n_signal/4;
 Color_orange='#D95319';
 Color_blue='#0072BD';
 Color_green='#77AC30';
+mycolor={Color_orange,Color_blue,Color_green};
 % histogram 
 
 figure()
@@ -105,33 +109,74 @@ xlim(diam_lim)
 ylim(vel_lim)
 %% 
 
-message = {'Click Ok and than select with the polygon the 3 different families'};
+
+message = {'Click Ok and than select with the polygon the 3 different families from left'};
 f = warndlg(message,'Warning');
 
+% loop to select different families
+for i=1:n_bead
 [X,Y]=getline(scatter_fig);
-[index_value_family1]=inpolygon(diam,shape,X,Y);
-selected_value_family1=[diam(index_value_family1),shape(index_value_family1)];
-fit_line_family1=polyfit(selected_value_family1(:,1),selected_value_family1(:,2),1);
-fitted_y_family1=polyval(fit_line_family1,selected_value_family1(:,1));
+% manually select different indexes
+[index_value]=inpolygon(diam,shape,X,Y);
+% isolated the selected value for diameters and shape parameters
+% with a char array of two column
+selected_value{:,i}=[diam(index_value),shape(index_value)];
+% compute the normalized diameters respect the relative nominal diameter
+normalized_D{:,i}=diam(index_value)./d_nominal(i);
+% compute fitting only for graphical purpose to give feedback in fig window
+% the fitting is from diameter and shape parameters
+fit_line(:,i)=polyfit(selected_value{i}(:,1),selected_value{i}(:,2),1)';
+fitted_y=polyval(fit_line(:,i)',selected_value{i}(:,1));
+fitted_value{i}=fitted_y;
 hold on
-plot(selected_value_family1(:,1),fitted_y_family1,'LineWidth',2,'Color',Color_orange)
+plot(selected_value{i}(:,1),fitted_value{i},'LineWidth',2,'Color',mycolor{i})
 clear X Y
-[X,Y]=getline(scatter_fig);
-[index_value_family2]=inpolygon(diam,shape,X,Y);
-selected_value_family2=[diam(index_value_family2),shape(index_value_family2)];
-fit_line_family2=polyfit(selected_value_family2(:,1),selected_value_family2(:,2),1);
-fitted_y_family2=polyval(fit_line_family2,selected_value_family2(:,1));
-hold on
-plot(selected_value_family2(:,1),fitted_y_family2,'LineWidth',2,'Color',Color_blue)
+end
 
-clear X Y
-[X,Y]=getline(scatter_fig);
-[index_value_family3]=inpolygon(diam,shape,X,Y);
-selected_value_family3=[diam(index_value_family3),shape(index_value_family3)];
-fit_line_family3=polyfit(selected_value_family3(:,1),selected_value_family3(:,2),1);
-fitted_y_family3=polyval(fit_line_family3,selected_value_family3(:,1));
+normalized_diam_figs=figure;
 hold on
-plot(selected_value_family3(:,1),fitted_y_family3,'LineWidth',2,'Color',Color_green)
+% plot normalized value for the different families
+for i=1:n_bead
+plot(normalized_D{i},selected_value{i}(:,2),'*')
+end
+
+% computed fitting for compensation procedure
+y_data=[];
+x_data=[];
+for i=1:n_bead
+y_data=[y_data; selected_value{i}(:,2)];
+x_data=[x_data; normalized_D{i}];
+end
+
+fitting=polyfit(x_data,y_data,1);
+fitting_valuated=polyval(fitting,x_data);
+figure(normalized_diam_figs)
+hold on
+plot(x_data,fitting_valuated)
+% [X,Y]=getline(scatter_fig);
+% [index_value_family1]=inpolygon(diam,shape,X,Y);
+% selected_value_family1=[diam(index_value_family1),shape(index_value_family1)];
+% fit_line_family1=polyfit(selected_value_family1(:,1),selected_value_family1(:,2),1);
+% fitted_y_family1=polyval(fit_line_family1,selected_value_family1(:,1));
+% hold on
+% plot(selected_value_family1(:,1),fitted_y_family1,'LineWidth',2,'Color',Color_orange)
+% clear X Y
+% [X,Y]=getline(scatter_fig);
+% [index_value_family2]=inpolygon(diam,shape,X,Y);
+% selected_value_family2=[diam(index_value_family2),shape(index_value_family2)];
+% fit_line_family2=polyfit(selected_value_family2(:,1),selected_value_family2(:,2),1);
+% fitted_y_family2=polyval(fit_line_family2,selected_value_family2(:,1));
+% hold on
+% plot(selected_value_family2(:,1),fitted_y_family2,'LineWidth',2,'Color',Color_blue)
+% 
+% clear X Y
+% [X,Y]=getline(scatter_fig);
+% [index_value_family3]=inpolygon(diam,shape,X,Y);
+% selected_value_family3=[diam(index_value_family3),shape(index_value_family3)];
+% fit_line_family3=polyfit(selected_value_family3(:,1),selected_value_family3(:,2),1);
+% fitted_y_family3=polyval(fit_line_family3,selected_value_family3(:,1));
+% hold on
+% plot(selected_value_family3(:,1),fitted_y_family3,'LineWidth',2,'Color',Color_green)
 
 
 %% 
