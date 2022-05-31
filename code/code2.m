@@ -55,7 +55,7 @@ shape_lim=[0.15 0.3];
 vel_lim=[0.1 0.5];
 n_bin=n_signal/10;
 Color_orange='#D95319';
-Color_blue='#0072BD';
+Color_blue='#4DBEEE';
 Color_green='#77AC30';
 mycolor={Color_orange,Color_blue,Color_green};
 % histogram 
@@ -68,7 +68,6 @@ title('Electrical diameter distribution')
 xlim(diam_lim)
 ylabel('Count')
 xlabel('Electrical diameter [\mu m]')
-%% SCATTER PLOT and LINEAR FIT
 % scatter plot
 scatter_fig=figure();
 scatter(diam,shape)
@@ -187,23 +186,6 @@ xlabel('Corrected electric diameter [\mu m]')
 ylabel('Count')
 title('Corrected electric diameter')
 
-%% Test by numltiply for the mean
-figure()
-histogram(diam_corr_family1*mean(diam(index_value_family1)),n_bin,'FaceColor',Color_orange,'EdgeColor','none');
-hold on
-histogram(diam_corr_family2*mean(diam(index_value_family2)),n_bin,'FaceColor',Color_blue,'EdgeColor','none');
-histogram(diam_corr_family3*mean(diam(index_value_family3)),n_bin,'FaceColor',Color_green,'EdgeColor','none');
-xlim(diam_lim)
-
-figure()
-scatter(diam_corr_family1*mean(diam(index_value_family1)),shape(index_value_family1),'MarkerEdgeColor',Color_orange)
-hold on
-scatter(diam_corr_family2*mean(diam(index_value_family2)),shape(index_value_family2),'MarkerEdgeColor',Color_blue)
-scatter(diam_corr_family3*mean(diam(index_value_family3)),shape(index_value_family3),'MarkerEdgeColor',Color_green)
-
-xlim(diam_lim)
-
-
 
 
 %% extra test
@@ -222,10 +204,17 @@ histogram2(diam,shape,'DisplayStyle','tile','ShowEmptyBins','on', ...
     'NumBins',[n_bin_d,n_bin_sig],'XBinLimits',electric_D_lim,'YBinLimits',sig_ov_del_lim);
 colorbar
 
+figure()
+histogram2(diam_corr,y_data,'DisplayStyle','tile','ShowEmptyBins','on', ...
+    'NumBins',[n_bin_d,n_bin_sig],'XBinLimits',electric_D_lim,'YBinLimits',sig_ov_del_lim);
+colorbar
+
+
+
 %% Figures export
 % insert path
 % here is used path from Current Folder referencing path
-path='figs/';
+path='figs2/';
 exportgraphics(figure(signal_visualization_fig),strcat(path,'signal_visualization_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
 exportgraphics(figure(histogram_figs),strcat(path,'histogram_figs','.pdf'),'BackgroundColor','none','ContentType','vector');
 exportgraphics(figure(scatter_fig),strcat(path,'scatter_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
