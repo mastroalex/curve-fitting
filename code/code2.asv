@@ -2,42 +2,11 @@ clear all; close all; clc
 %%
 load mistery.mat
 
-%% Signal visualization
-% select index of the signal to plot
-% from 1 to 57361
-signal_to_plot=[5 10 400 700 35698];
-% different marks for different signal
-all_marks = {'o','+','*','x','^','v','>','p','h'};
-signal_visualization_fig=figure();
-
-
-hold on
-for i=1:length(signal_to_plot)
-    % update the marker from the list
-    marker=all_marks{mod(i,length(all_marks))};
-    % plot the signal of index selected from signal_to_plot
-    % the amplitude is scaled with 1e6 to scale from [A] to [uA]
-    plot(1e6*mistery_data{signal_to_plot(i)},marker)
-end
-ylabel('I_{diff} [\mu A]')
-xlabel('Sample')
-grid on
-%% Fitting (from previous lesson)
-% use like fitMySignal(index,mistery_data,WantPlot)
-% WantPlot to 'no' and no plot
-% WantPlot to 'yes' return also plot figure
-% default is set to 'yes' to obtaine plotted figure
-% the function return plot figure and fitting output
-index=100;
-
-%fitted=fitMySignal(mistery_data,index,'no');
-fitted=fitMySignal(mistery_data,index);
 
 %% 
-% Predisporre un ciclo for su un tot di segnali, memorizzando i parametri
 % ottimali in opportune variabili 
-firstSignal=400;
-lastSignal=800;
+firstSignal=200;
+lastSignal=20200;
 %lastSignal=57361;
 n_signal=lastSignal-firstSignal;
 sigma=zeros(lastSignal-firstSignal,1);
@@ -69,13 +38,22 @@ shape=sigma./delta; % shape parameters
 %G=1;                % electric gain [um / uA^(1/3)]
 G=10.5; % From Errico [um / uA^(1/3)]
 % a is [A] but I need it in uA --> *1e6
+a_temp=a(a>0);
+shape_temp=shape(a>0);
+clear a
+clear shape
+a=a_temp;
+shape=shape_temp;
+clear shape_temp
+clear a_temp
 diam=G*(a.*1e6).^(1/3); % electric parameters prop to a^(1/3) [um]
+
 d_nominal=[5.2,6,7]; % nominal bead diameter [um]
 n_bead=length(d_nominal);
 diam_lim=[4.5 10.5];
 shape_lim=[0.15 0.3];
 vel_lim=[0.1 0.5];
-n_bin=n_signal/4;
+n_bin=n_signal/10;
 Color_orange='#D95319';
 Color_blue='#0072BD';
 Color_green='#77AC30';
@@ -99,15 +77,15 @@ ylabel('Shape parameters')
 xlim(diam_lim)
 ylim(shape_lim)
 %%
-L=40e-6; %[mm] L=40 [um]
-velocity=L./(delta*1e-3); % where L [um] and delta [ms]
-velocity_fig=figure();
-scatter(diam,velocity)
- % ATTENZIONE MANC QUALCOSA NELLE UNIT° DI MISURA !!!!
-xlabel('Electric diameter [\mu m]')
-ylabel('Velocity [mm/s]')
-xlim(diam_lim)
-ylim(vel_lim)
+% L=40e-6; %[mm] L=40 [um]
+% velocity=L./(delta*1e-3); % where L [um] and delta [ms]
+% velocity_fig=figure();
+% scatter(diam,velocity)
+%  % ATTENZIONE MANC QUALCOSA NELLE UNIT° DI MISURA !!!!
+% xlabel('Electric diameter [\mu m]')
+% ylabel('Velocity [mm/s]')
+% xlim(diam_lim)
+% ylim(vel_lim)
 %% 
 
 
@@ -231,8 +209,8 @@ xlim(diam_lim)
 %% extra test
 
 
-n_bin_d=200;
-n_bin_sig=200;
+n_bin_d=300;
+n_bin_sig=300;
 % limits from Errico_Caselli_SAB_2017 
 
 electric_D_lim     =[4.5,10.5];
@@ -240,7 +218,7 @@ electric_D_norm_lim=[0.8,1.6];
 velocity_lim       =[0.1,0.5];
 sig_ov_del_lim     =[0.15,0.30];
 figure()
-histogram2(diam_corr,y_data,'DisplayStyle','tile','ShowEmptyBins','on', ...
+histogram2(diam,shape,'DisplayStyle','tile','ShowEmptyBins','on', ...
     'NumBins',[n_bin_d,n_bin_sig],'XBinLimits',electric_D_lim,'YBinLimits',sig_ov_del_lim);
 colorbar
 
