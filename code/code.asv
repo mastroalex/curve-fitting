@@ -168,46 +168,12 @@ end
 
 diam_corr=selected_diameter./(c1+c2*y_data);
 
-scatter_corrected_fig=figure;
+figure;
 scatter(diam_corr,y_data)
 xlabel('Corrected electric diameter [\mu m]')
 ylabel('Shape parameters')
 xlim(diam_lim)
 ylim(shape_lim)
-
-histogram_corrected_fig=figure;
-histogram(diam_corr,n_bin)
-xlabel('Corrected electric diameter [\mu m]')
-ylabel('Count')
-title('Corrected electric diameter')
-xlim(diam_lim)
-
-%% separate corrected value
-corrected_separate_value={};
-for i=1:n_bead
-corrected_separate_value{i}=[selected_value{i}(:,1)./(c1+c2*selected_value{i}(:,2)) , selected_value{i}(:,2)];
-end
-
-% % scatter_corrected2_fig=figure;
-% % 
-% % for i=1:n_bead
-% % hold on
-% % scatter(corrected_separate_value{i}(:,1),corrected_separate_value{i}(:,2),'Color',mycolor{i})
-% % end
-% % xlabel('Corrected electric diameter [\mu m]')
-% % ylabel('Shape parameters')
-% % xlim(diam_lim)
-% % ylim(shape_lim)
-
-histogram_corrected_fig=figure;
-for i=1:n_bead
-hold on
-histogram(corrected_separate_value{i}(:,1),floor(n_bin/4),'EdgeColor',mycolor{i},'FaceColor',mycolor{i})
-end
-xlim(diam_lim)
-xlabel('Corrected electric diameter [\mu m]')
-ylabel('Count')
-title('Corrected electric diameter')
 
 % % %  % % %
 
@@ -295,11 +261,3 @@ colorbar
 % here is used path from Current Folder referencing path
 path='figs/';
 exportgraphics(figure(signal_visualization_fig),strcat(path,'signal_visualization_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
-exportgraphics(figure(histogram_figs),strcat(path,'histogram_figs','.pdf'),'BackgroundColor','none','ContentType','vector');
-exportgraphics(figure(scatter_fig),strcat(path,'scatter_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
-exportgraphics(figure(normalized_diam_figs),strcat(path,'normalized_diam_figs','.pdf'),'BackgroundColor','none','ContentType','vector');
-exportgraphics(figure(scatter_corrected_fig),strcat(path,'scatter_corrected_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
-exportgraphics(figure(histogram_corrected_fig),strcat(path,'histogram_corrected_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
-
-
-
