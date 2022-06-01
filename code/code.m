@@ -132,6 +132,7 @@ fitted_value{i}=fitted_y;
 hold on
 plot(selected_value{i}(:,1),fitted_value{i},'LineWidth',2,'Color',mycolor{i})
 clear X Y
+velocity_corrected{i}=velocity(index_value);
 end
 
 normalized_diam_figs=figure;
@@ -199,50 +200,45 @@ ylabel('Shape parameters')
 xlim(diam_lim)
 ylim(shape_lim)
 
+%%
+
+
 histogram_corrected2_fig=figure;
+myhist={};
 for i=1:n_bead
 hold on
-histogram(corrected_separate_value{i}(:,1),floor(n_bin/4),'EdgeColor',mycolor{i},'FaceColor',mycolor{i})
+%histogram(corrected_separate_value{i}(:,1),floor(n_bin/4),'EdgeColor',mycolor{i},'FaceColor',mycolor{i})
+myhist{i}=histfit(corrected_separate_value{i}(:,1),floor(n_bin/4),'normal');
+set(myhist{i}(1),'FaceColor',mycolor{i}); 
+set(myhist{i}(2),'color',mycolor{i})
+set(myhist{i}(2),'LineWidth',2)
+set(myhist{i}(2),'LineStyle','-')
+set(myhist{i}(1),'FaceAlpha',.2);
+distribution_fit{i}=fitdist(corrected_separate_value{i}(:,1),'normal');
 end
 xlim(diam_lim)
 xlabel('Corrected electric diameter [\mu m]')
 ylabel('Count')
 title('Corrected electric diameter')
+for i=1:n_bead
+    j=i*2;
+myLegend{j-1}=strcat(string(d_nominal(i)),' {\mu}m beads');
+myLegend{j}=strcat('\sigma= '," ",string(distribution_fit{i}.sigma),', \mu= '," ",string(distribution_fit{i}.mu));
+end
+legend(myLegend)
 
-%% Test by numltiply for the mean
-figure()
-histogram(diam_corr_family1*mean(diam(index_value_family1)),n_bin,'FaceColor',Color_orange,'EdgeColor','none');
+%%
+
+velocity_corrected_fig=figure();
+
+for i=1:n_bead
 hold on
-histogram(diam_corr_family2*mean(diam(index_value_family2)),n_bin,'FaceColor',Color_blue,'EdgeColor','none');
-histogram(diam_corr_family3*mean(diam(index_value_family3)),n_bin,'FaceColor',Color_green,'EdgeColor','none');
+scatter(corrected_separate_value{i}(:,1),velocity_corrected{i},'MarkerEdgeColor',mycolor{i})
+end
+xlabel('Corrected electric diameter [\mu m]')
+ylabel('Velocity [mm/s]')
 xlim(diam_lim)
-
-figure()
-scatter(diam_corr_family1*mean(diam(index_value_family1)),shape(index_value_family1),'MarkerEdgeColor',Color_orange)
-hold on
-scatter(diam_corr_family2*mean(diam(index_value_family2)),shape(index_value_family2),'MarkerEdgeColor',Color_blue)
-scatter(diam_corr_family3*mean(diam(index_value_family3)),shape(index_value_family3),'MarkerEdgeColor',Color_green)
-
-xlim(diam_lim)
-
-
-
-
-%% extra test
-
-
-n_bin_d=200;
-n_bin_sig=200;
-% limits from Errico_Caselli_SAB_2017 
-
-electric_D_lim     =[4.5,10.5];
-electric_D_norm_lim=[0.8,1.6];
-velocity_lim       =[0.1,0.5];
-sig_ov_del_lim     =[0.15,0.30];
-figure()
-histogram2(diam_corr,y_data,'DisplayStyle','tile','ShowEmptyBins','on', ...
-    'NumBins',[n_bin_d,n_bin_sig],'XBinLimits',electric_D_lim,'YBinLimits',sig_ov_del_lim);
-colorbar
+ylim(vel_lim)
 
 %% Figures export
 % insert path
@@ -257,6 +253,7 @@ exportgraphics(figure(histogram_corrected_fig),strcat(path,'histogram_corrected_
 
 exportgraphics(figure(scatter_corrected2_fig),strcat(path,'scatter_corrected2_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
 exportgraphics(figure(histogram_corrected2_fig),strcat(path,'histogram_corrected2_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
+exportgraphics(figure(velocity_corrected_fig),strcat(path,'velocity_corrected_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
 
 
 
