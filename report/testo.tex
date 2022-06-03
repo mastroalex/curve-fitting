@@ -51,6 +51,7 @@ La gaussiana bipolare è una forma d'onda caratteristica composta da due gaussia
 
 \begin{equation}
 	g(t)=a\left[e^{g_{+}(t)}-e^{g_{-}(t)}\right]
+	\label{eq:gaussianabipolare}
 \end{equation}
 
 Ovvero, considerata un'ampiezza di riferimento $a$ (i.e. il valore massimo di picco), è la somma di due gaussiane nel tempo di cui la seconda ribaltata. La distanza picco-picco è pari a $\delta$ e si introduce un parametro di centratura $t_c$. Le due gaussiane condividono la medesima deviazione standard $\sigma$ e sono identificate dall'equazione:
@@ -83,8 +84,138 @@ Si cerca di minimizzare la funzione obiettivo definita proprio come la norma del
 \subsection{Accuratezza}
 
 
+I dispositivi microfluidi possono essere più o meno accurati. Questo è legato alla configurazione degli elettrodi, alla geometria e COMPLETA COMPLETA
 
-CITA ERRICO QUI
+In particolare, per il caso di riferimento si osserva una dipendenza del segnale dalla posizione all'interno del canale. Nonostante l'ampiezza del picco della gaussiana sia correlata con il diametro cellulare si osserva una dipendenza anche dalla posizione.
+
+Ovvero, a parità di diametro, una cellula passante vicino agli elettrodi darà un picco di ampiezza maggiore alla stessa cellula passante ad una distanza maggiore.
+
+Nonostante nella configurazione utilizzata non si può avere una misura diretta della posizione all'interno del canale è possibile ottenerne una stima effettuando una compensazione del segnale tenendo conto della correlazione tra la posizione e lo shape parameters.
+
+In particolare, risulta valida la relazione tra il parametro di forma $\sigma \over \delta$ e il diametro normalizzato che segue una legge lineare:
+\begin{equation}
+	{D\over d}={c_1+c_2\left(\sigma \over \delta \right)}
+\end{equation}
+
+Si possono quindi usare tali coefficienti della retta per correggere il diametro elettrico togliendo l'effetto di posizione \cite{errico_mitigating_2017}.
+
+
+%\begin{figure}[t!]
+%	\centering
+%	\includegraphics[width=0.95\linewidth]{imagefile}
+%	\caption{}
+%	\label{fig:}
+%\end{figure}
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{fitted}
+	\caption{Grafico dell'andamento temporale }
+	\label{fig:fitted}
+\end{figure}
+
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{normalized_diam_figs}
+	\caption{}
+	\label{fig:normalized}
+\end{figure}
+
+\begin{figure*}[t!]
+	\centering
+	\begin{subfigure}{0.5\linewidth}
+			\centering
+	\includegraphics[width=0.9\linewidth]{histogram_figs}
+\caption{}
+	\end{subfigure}\hfill
+\begin{subfigure}{0.5\linewidth}
+		\centering
+	\includegraphics[width=0.9\linewidth]{histogram_corrected2_fig}
+	\caption{}
+\end{subfigure}
+	\caption{}
+	\label{fig:histogram}
+\end{figure*}
+
+\begin{figure*}[t!]
+	\centering
+	\begin{subfigure}{0.5\linewidth}
+			\centering
+		\includegraphics[width=0.9\linewidth]{scatter_fig}
+		\caption{}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.5\linewidth}
+			\centering
+		\includegraphics[width=0.9\linewidth]{scatter_corrected2_fig}
+		\caption{}
+	\end{subfigure}
+	\caption{}
+	\label{fig:scatter}
+\end{figure*}
+
+
+\begin{figure*}[t!]
+	\centering
+	\begin{subfigure}{0.5\linewidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{velocity_fig}
+		\caption{}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.5\linewidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{velocity_corrected_fig}
+		\caption{}
+	\end{subfigure}
+	\caption{}
+	\label{fig:velocity}
+\end{figure*}
+
+
+
+
+\begin{figure*}[t!]
+	\centering
+		\begin{subfigure}{0.33\linewidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{histogram_data}
+		\caption{}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.33\linewidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{density_diam_shape}
+		\caption{}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.33\linewidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{density_diam_velocity}
+		\caption{}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.33\linewidth}
+	\centering
+	\includegraphics[width=0.9\linewidth]{histogram_corrected_fig}
+	\caption{}
+\end{subfigure}\hfill
+	\begin{subfigure}{0.33\linewidth}
+	\centering
+	\includegraphics[width=0.9\linewidth]{density_diam_corr_shape}
+	\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.33\linewidth}
+	\centering
+	\includegraphics[width=0.9\linewidth]{density_diam_corr_velocity}
+	\caption{}
+\end{subfigure}
+	\caption{}
+	\label{fig:density}
+\end{figure*}
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{normalized_D}
+	\caption{}
+	\label{fig:normalizedDensity}
+\end{figure}
 
 \section{Risultati}
 
@@ -99,6 +230,15 @@ PARLA DEL DATASET E DEI PARAMETRI
 
 \subsection{Fitting numerico}
 
+A partire dal singolo segnale all'interno dell'intero dataset è possibile fittare la gaussiana bipolare andando a stimarne i quattro coefficienti descrittivi.
+
+Considerando il template in \cref{eq:gaussianabipolare} è possibile utilizzare il comando Matlab \texttt{fit()} fornendo il template stesso, i dati e i valori iniziali per la stima ai minimi quadrati.
+
+Inoltre, essendo il segnale molto piccolo $\propto 10^{-6}$ è utile normalizzare il segnale di ampiezza e scalare l'asse dei tempi riportandolo in secondi nel range $[0;\:{1\over f_s}]$, dove $f_s$ è la frequenza di campionamento il cui inverso indica l'ultimo campione temporale.
+
+A questo deve seguire poi necessariamente una riscalatura nel dominio originario. 
+
+Un esempio di fitting è presente in \cref{fig:fitted}.
 
 
 \subsection{Compensazione}
@@ -122,3 +262,7 @@ Il materiale è disponibile alla repository online del progetto: \url{https://gi
 \clearpage
 \onecolumn
 \section*{Appendice}
+
+
+
+

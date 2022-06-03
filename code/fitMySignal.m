@@ -34,13 +34,17 @@ function fitted_signal=fitMySignal(mistery_data,index,WantPlot)
     fitted_signal=fit(t',data_fit',g,opts); 
     if isequal(WantPlot,'yes') % plot fitting curve and sample
         figure()
-        plot(fitted_signal)
+        % scale back time and fitted_signal
+        % plot(scaled time, scale signal)
+        % to scale back fitted: first calc in t and than scale it
+        plot(t.*data_fit_t(end),fitted_signal(t).*max(abs(data_fit)),'-r')
         hold on
-        plot(t,data_fit,'*b')
+        % plot scaled samples
+        plot(t.*data_fit_t(end),data_fit.*max(abs(data_fit)),'*b')
         xlabel('time [ms]')
         title(['Fit for mistery\_data: ', 'signal n.',num2str(index)])
         legend({'fit','data'})
-        ylabel('signal [A]')
+        ylabel('signal [{\mu}A]')
     end
 end
 

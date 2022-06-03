@@ -16,5 +16,108 @@
   {}
 \endgroup
 
-\datalist[entry]{none/global//global/global}\enddatalist
+\datalist[entry]{none/global//global/global}
+  \entry{errico_mitigating_2017}{article}{}
+    \name{author}{6}{}{%
+      {{hash=EV}{%
+         family={Errico},
+         familyi={E\bibinitperiod},
+         given={Vito},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=NAD}{%
+         family={Ninno},
+         familyi={N\bibinitperiod},
+         given={Adele\bibnamedelima De},
+         giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=BFR}{%
+         family={Bertani},
+         familyi={B\bibinitperiod},
+         given={Francesca\bibnamedelima Romana},
+         giveni={F\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=BL}{%
+         family={Businaro},
+         familyi={B\bibinitperiod},
+         given={Luca},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=BP}{%
+         family={Bisegna},
+         familyi={B\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=CF}{%
+         family={Caselli},
+         familyi={C\bibinitperiod},
+         given={Federica},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{EV+1}
+    \strng{fullhash}{EVNADBFRBLBPCF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/j.snb.2017.03.035
+    \endverb
+    \field{issn}{09254005}
+    \field{pages}{580\bibrangedash 586}
+    \field{title}{Mitigating positional dependence in coplanar electrode
+  {Coulter}-type microfluidic devices}
+    \verb{url}
+    \verb https://linkinghub.elsevier.com/retrieve/pii/S0925400517304525
+    \endverb
+    \field{volume}{247}
+    \verb{file}
+    \verb Electronic supplementary material to:C\:\\Users\\bigba\\Zotero\\stora
+    \verb ge\\QWX2KSB3\\Errico et al. - 2017 - Mitigating positional dependence
+    \verb  in coplanar elect.pdf:application/pdf;Errico et al. - 2017 - Mitigat
+    \verb ing positional dependence in coplanar elect.pdf:C\:\\Users\\bigba\\Zo
+    \verb tero\\storage\\K2E8UHJ6\\Errico et al. - 2017 - Mitigating positional
+    \verb  dependence in coplanar elect.pdf:application/pdf;erricoMitigatingPos
+    \verb itionalDependence2017-zotero.md:C\:\\Users\\bigba\\iCloudDrive\\iClou
+    \verb d~md~obsidian\\Alessandro\\Literature extra\\erricoMitigatingPosition
+    \verb alDependence2017-zotero.md:text/plain;erricoMitigatingPositionalDepen
+    \verb dence2017.md:C\:\\Users\\bigba\\iCloudDrive\\iCloud~md~obsidian\\Ales
+    \verb sandro\\Literature extra\\erricoMitigatingPositionalDependence2017.md
+    \verb :text/plain;undefined - Extracted Annotations (19032022, 201244).md:/
+    \verb Users/alessandromastrofini/Library/Mobile Documents/iCloud~md~obsidia
+    \verb n/Documents/Alessandro/Literature extra/undefined - Extracted Annotat
+    \verb ions (19032022, 201244).md:text/plain;undefined-zotero.md:/Users/ales
+    \verb sandromastrofini/Library/Mobile Documents/iCloud~md~obsidian/Document
+    \verb s/Alessandro/Literature extra/undefined-zotero.md:text/plain
+    \endverb
+    \field{journaltitle}{Sensors and Actuators B: Chemical}
+    \field{annotation}{%
+    Extracted Annotations (19/03/2022, 20:12:44) "Displaced volume is measured
+  as a voltage pulse, whose magnitude provides information on the size of the
+  partic" (Errico et al 2017:580) "at low frequencies the technique provides
+  cell sizing because the impedance signal is proportional to cell volume."
+  (Errico et al 2017:580) "In fact, due to a non-homogeneous electric field
+  distribution, nominally identical particles flowing through different
+  trajectories experience different electric field strengths and generate
+  different impedance signals" (Errico et al 2017:580) "that is used to
+  effectively compensate for the non-uniform electric field in the channel"
+  (Errico et al 2017:581) "A bipolar Gaussian profile [31,32] can be used to
+  fit the differential signal traces" (Errico et al 2017:581) "This template
+  depends on four parameters: central time moment, tc ; transit time, ı; peak
+  width control, ; and peak amplitude con- trol, a." (Errico et al 2017:581)
+  "The cube root of a can be used to estimate particle diameter:" (Errico et al
+  2017:581) "On the other hand, by analyzing the pulse curve shapes (Fig.
+  1(c)), it is possible to determine approximately where in the channel a
+  particle was travelling" (Errico et al 2017:581)%
+    }
+    \field{month}{08}
+    \field{year}{2017}
+    \field{urlday}{19}
+    \field{urlmonth}{03}
+    \field{urlyear}{2022}
+  \endentry
+\enddatalist
 \endinput

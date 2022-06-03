@@ -288,9 +288,10 @@ ylim(vel_lim)
 % insert path
 % here is used path from Current Folder referencing path
 path='figs/';
-exportgraphics(figure(signal_visualization_fig),strcat(path,'signal_visualization_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
+%exportgraphics(figure(signal_visualization_fig),strcat(path,'signal_visualization_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
 exportgraphics(figure(histogram_figs),strcat(path,'histogram_figs','.pdf'),'BackgroundColor','none','ContentType','vector');
 exportgraphics(figure(scatter_fig),strcat(path,'scatter_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
+exportgraphics(figure(velocity_fig),strcat(path,'velocity_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
 exportgraphics(figure(normalized_diam_figs),strcat(path,'normalized_diam_figs','.pdf'),'BackgroundColor','none','ContentType','vector');
 exportgraphics(figure(scatter_corrected_fig),strcat(path,'scatter_corrected_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
 exportgraphics(figure(histogram_corrected_fig),strcat(path,'histogram_corrected_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
@@ -298,3 +299,5 @@ exportgraphics(figure(histogram_corrected_fig),strcat(path,'histogram_corrected_
 exportgraphics(figure(scatter_corrected2_fig),strcat(path,'scatter_corrected2_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
 exportgraphics(figure(histogram_corrected2_fig),strcat(path,'histogram_corrected2_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
 exportgraphics(figure(velocity_corrected_fig),strcat(path,'velocity_corrected_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
+
+save('final_test_workspace.mat')

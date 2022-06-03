@@ -77,7 +77,7 @@ mycolor={Color_orange,Color_blue,Color_green};
 
 % histogram 
 histogram_figs=figure()
-histogram(diam,n_bin);
+histogram(diam,n_bin,'EdgeAlpha',0.2);
 title('Electrical diameter distribution') 
 xlim(diam_lim)
 ylabel('Count')
@@ -269,6 +269,7 @@ path='figs2/';
 exportgraphics(figure(signal_visualization_fig),strcat(path,'signal_visualization_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
 exportgraphics(figure(histogram_figs),strcat(path,'histogram_figs','.pdf'),'BackgroundColor','none','ContentType','vector');
 exportgraphics(figure(scatter_fig),strcat(path,'scatter_fig','.pdf'),'BackgroundColor','none','ContentType','vector');
+exportgraphics(figure(histogram_figs),strcat(path,'histogram_data','.pdf'),'BackgroundColor','none','ContentType','vector');
 
 exportgraphics(figure(density_diam_shape),strcat(path,'density_diam_shape','.pdf'),'BackgroundColor','none','ContentType','vector');
 exportgraphics(figure(density_diam_velocity),strcat(path,'density_diam_velocity','.pdf'),'BackgroundColor','none','ContentType','vector');
