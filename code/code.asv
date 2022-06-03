@@ -120,7 +120,7 @@ velocity=L./(delta*1e-3); % where L [um] and delta [ms]
 velocity_fig=figure();
 scatter(diam,velocity)
 xlabel('Electric diameter [\mu m]')
-ylabel('Velocity [m/s]')
+ylabel('Velocity [mm/s]')
 xlim(diam_lim)
 ylim(vel_lim)
 %% Families selection and fitting
@@ -280,7 +280,7 @@ for i=1:n_bead
     scatter(corrected_separate_value{i}(:,1),velocity_corrected{i},'MarkerEdgeColor',mycolor{i})
 end
 xlabel('Corrected electric diameter [\mu m]')
-ylabel('Velocity [m/s]')
+ylabel('Velocity [mm/s]')
 xlim(diam_lim)
 ylim(vel_lim)
 
