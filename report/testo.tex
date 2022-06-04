@@ -95,6 +95,7 @@ Nonostante nella configurazione utilizzata non si può avere una misura diretta 
 In particolare, risulta valida la relazione tra il parametro di forma $\sigma \over \delta$ e il diametro normalizzato che segue una legge lineare:
 \begin{equation}
 	{D\over d}={c_1+c_2\left(\sigma \over \delta \right)}
+	\label{eq:compensazione}
 \end{equation}
 
 Si possono quindi usare tali coefficienti della retta per correggere il diametro elettrico togliendo l'effetto di posizione \cite{errico_mitigating_2017}.
@@ -110,7 +111,7 @@ Si possono quindi usare tali coefficienti della retta per correggere il diametro
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=0.9\linewidth]{fitted}
-	\caption{Grafico dell'andamento temporale }
+	\caption{Grafico dell'andamento temporale del segnale n. 100. In blu i campioni e in rosso il segnale fittato con una gaussiana bipolare}
 	\label{fig:fitted}
 \end{figure}
 
@@ -144,6 +145,7 @@ Si possono quindi usare tali coefficienti della retta per correggere il diametro
 			\centering
 		\includegraphics[width=0.9\linewidth]{scatter_fig}
 		\caption{}
+		\label{fig:scatter_init}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.5\linewidth}
 			\centering
@@ -217,7 +219,7 @@ Si possono quindi usare tali coefficienti della retta per correggere il diametro
 	\label{fig:normalizedDensity}
 \end{figure}
 
-\section{Risultati}
+
 
 \subsection{Dataset di riferimento}
 
@@ -227,6 +229,12 @@ Per il dispositivo in questione il guadagno è pari a 10.5 $\mu$m / A\textsupers
 
 
 PARLA DEL DATASET E DEI PARAMETRI 
+
+\section{Risultati}
+
+Inizialmente la procedura viene applicata su un dataset ristretto considerando 400 segnali. Vengono selezionati quindi i segnali di indice da 400 a 800.
+
+Successivamente la procedura verrà applicata anche su un riferimento più esteso.
 
 \subsection{Fitting numerico}
 
@@ -242,6 +250,29 @@ Un esempio di fitting è presente in \cref{fig:fitted}.
 
 
 \subsection{Compensazione}
+
+Per la procedura di compensazione è necessario stimare i coefficienti di un fitting lineare. Tale fitting deve essere fatto nello spazio $[{\delta\over \sigma};\:{D\over d}$] ed è quindi necessario normalizzare i diametri elettrici rispetto i singoli diametri nominali delle tre famiglie. 
+
+Dallo scatter plot del diametro elettrico vs shape parameters è possibile distinguere tre famiglie (\cref{fig:scatter_init}). Mediante la funzione \texttt{inpolygon()} è possibile selezionare separatamente i valori corrispondenti alle tre famiglie e quindi normalizzarle per il rispettivo diametro nominale. 
+
+Quindi è possibile calcolare la retta che meglio approssima l'andamento dello shape parameter in funzione del diametro elettrico normalizzato (\cref{fig:normalized}). Dunque è possibile estrarre i coefficienti:
+\begin{itemize}
+	\item $\mathtt{c1}=2.59$
+	\item $\mathtt{c2}=-6.20$
+\end{itemize}
+
+E il coefficiente di determinazione $\mathtt{r}^2=0.96$. 
+
+Tramite tali coefficienti è possibile correggere i valori tramite l'\cref{eq:compensazione}.
+
+Si ottengono quindi le famiglie separate sia nello scatter plot dello shape parameter che della velocità, in \cref{fig:scatter} e \cref{fig:velocity}.
+
+
+\subsection{Estensione del dominio di interesse}
+
+La stessa procedura può essere applicata anche su una quantità di segnali notevolmente maggiore. Vengono quindi considerati, nello stesso dataset di riferimento, i segnali di indice a 200 a 35200. 
+
+La procedura può essere applicata allo stesso modo ma gli scatter plot vengono sostituiti da plot di densità che permettono di osservare meglio la distribuzione dei valori.
 
 
 \section{Conclusioni}
