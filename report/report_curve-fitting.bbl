@@ -17,6 +17,196 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global}
+  \entry{caselli_simple_2016}{article}{}
+    \name{author}{2}{}{%
+      {{hash=CF}{%
+         family={Caselli},
+         familyi={C\bibinitperiod},
+         given={Federica},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=BP}{%
+         family={Bisegna},
+         familyi={B\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CFBP1}
+    \strng{fullhash}{CFBP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/TBME.2015.2462292
+    \endverb
+    \field{issn}{0018-9294, 1558-2531}
+    \field{number}{2}
+    \field{pages}{415\bibrangedash 422}
+    \field{title}{A {Simple} and {Robust} {Event}-{Detection} {Algorithm} for
+  {Single}-{Cell} {Impedance} {Cytometry}}
+    \verb{url}
+    \verb http://ieeexplore.ieee.org/document/7169531/
+    \endverb
+    \field{volume}{63}
+    \verb{file}
+    \verb Caselli_Bisegna_2016_A Simple and Robust Event-Detection Algorithm fo
+    \verb r Single-Cell Impedance.pdf:C\:\\Users\\bigba\\Zotero\\storage\\Y5ZIF
+    \verb I4P\\Caselli_Bisegna_2016_A Simple and Robust Event-Detection Algorit
+    \verb hm for Single-Cell Impedance.pdf:application/pdf;Full Text:C\:\\Users
+    \verb \\bigba\\Zotero\\storage\\5K6HN24Q\\Caselli and Bisegna - 2016 - A Si
+    \verb mple and Robust Event-Detection Algorithm for .pdf:application/pdf
+    \endverb
+    \field{journaltitle}{IEEE Transactions on Biomedical Engineering}
+    \field{month}{02}
+    \field{year}{2016}
+    \field{urlday}{04}
+    \field{urlmonth}{06}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{sun_single-cell_2010}{article}{}
+    \name{author}{2}{}{%
+      {{hash=ST}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Tao},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=MH}{%
+         family={Morgan},
+         familyi={M\bibinitperiod},
+         given={Hywel},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{STMH1}
+    \strng{fullhash}{STMH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    Lab-on-chip technologies are being developed for multiplexed single cell
+  assays. Impedance offers a simple non-invasive method for counting,
+  identifying and monitoring cellular function. A number of different
+  microﬂuidic devices for single cell impedance have been developed. These
+  have potential applications ranging from simple cell counting and label-free
+  identiﬁcation of different cell types or detecting changes in cell
+  morphology after invasion by parasites. Devices have also been developed that
+  trap single cells and continuously record impedance data. This technology has
+  applications in basic research, diagnostics, or non-invasively probing cell
+  function at the single-cell level. This review will describe the underlying
+  principles of impedance analysis of particles. It then describes the
+  state-of-the-art in the ﬁeld of microﬂuidic impedance ﬂow cytometry.
+  Finally, future directions and challenges are discussed.%
+    }
+    \verb{doi}
+    \verb 10.1007/s10404-010-0580-9
+    \endverb
+    \field{issn}{1613-4982, 1613-4990}
+    \field{number}{4}
+    \field{pages}{423\bibrangedash 443}
+    \field{shorttitle}{Single-cell microfluidic impedance cytometry}
+    \field{title}{Single-cell microfluidic impedance cytometry: a review}
+    \verb{url}
+    \verb http://link.springer.com/10.1007/s10404-010-0580-9
+    \endverb
+    \field{volume}{8}
+    \verb{file}
+    \verb Single-cell microfluidic impedance cytometry\: a review:C\:\\Users\\b
+    \verb igba\\Zotero\\storage\\T7CF9YDS\\sun2010.pdf.pdf:application/pdf;Sun
+    \verb and Morgan - 2010 - Single-cell microfluidic impedance cytometry a re
+    \verb .pdf:C\:\\Users\\bigba\\Zotero\\storage\\AA8FXBNR\\Sun and Morgan - 2
+    \verb 010 - Single-cell microfluidic impedance cytometry a re.pdf:applicati
+    \verb on/pdf
+    \endverb
+    \field{journaltitle}{Microfluidics and Nanofluidics}
+    \field{month}{04}
+    \field{year}{2010}
+    \field{urlday}{04}
+    \field{urlmonth}{06}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{spencer_high_2016}{article}{}
+    \name{author}{4}{}{%
+      {{hash=SD}{%
+         family={Spencer},
+         familyi={S\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=CF}{%
+         family={Caselli},
+         familyi={C\bibinitperiod},
+         given={Federica},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=BP}{%
+         family={Bisegna},
+         familyi={B\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=MH}{%
+         family={Morgan},
+         familyi={M\bibinitperiod},
+         given={Hywel},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{SD+1}
+    \strng{fullhash}{SDCFBPMH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    A new microfluidic impedance cytometer chip is demonstrated, giving high
+  quality impedance signals without the need for any particle focusing. , This
+  paper describes a new design of microfluidic impedance cytometer enabling
+  accurate characterization of particles without the need for focusing. The
+  approach uses multiple pairs of electrodes to measure the transit time of
+  particles through the device in two simultaneous different current
+  measurements, a transverse (top to bottom) current and an oblique current.
+  This gives a new metric that can be used to estimate the vertical position of
+  the particle trajectory through the microchannel. This parameter effectively
+  compensates for the non-uniform electric field in the channel that is an
+  unavoidable consequence of the use of planar parallel facing electrodes. The
+  new technique is explained and validated using numerical modelling. Impedance
+  data for 5, 6 and 7 μm particles are collected and compared with
+  simulations. The method gives excellent coefficient of variation in
+  (electrical) radius of particles of 1\% for a sheathless configuration.%
+    }
+    \verb{doi}
+    \verb 10.1039/C6LC00339G
+    \endverb
+    \field{issn}{1473-0197, 1473-0189}
+    \field{number}{13}
+    \field{pages}{2467\bibrangedash 2473}
+    \field{title}{High accuracy particle analysis using sheathless microfluidic
+  impedance cytometry}
+    \verb{url}
+    \verb http://xlink.rsc.org/?DOI=C6LC00339G
+    \endverb
+    \field{volume}{16}
+    \verb{file}
+    \verb Accepted Version:C\:\\Users\\bigba\\Zotero\\storage\\8ZA4S6CK\\Spence
+    \verb r et al. - 2016 - High accuracy particle analysis using sheathless m.
+    \verb pdf:application/pdf;Spencer et al_2016_High accuracy particle analysi
+    \verb s using sheathless microfluidic impedance.pdf:C\:\\Users\\bigba\\Zote
+    \verb ro\\storage\\EWYDHEJK\\Spencer et al_2016_High accuracy particle anal
+    \verb ysis using sheathless microfluidic impedance.pdf:application/pdf
+    \endverb
+    \field{journaltitle}{Lab on a Chip}
+    \field{year}{2016}
+    \field{urlday}{04}
+    \field{urlmonth}{06}
+    \field{urlyear}{2022}
+  \endentry
+
   \entry{errico_mitigating_2017}{article}{}
     \name{author}{6}{}{%
       {{hash=EV}{%

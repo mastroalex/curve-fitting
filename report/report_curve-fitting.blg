@@ -19,47 +19,52 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: report_curve-fitting-blx.bib
 Database file #2: mybib.bib
+Repeated entry---line 334 of file mybib.bib
+ : @article{spencer_high_2016
+ :                           ,
+I'm skipping whatever remains of this entry
 Biblatex version: 3.16
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 2 entries,
+You've used 5 entries,
             6393 wiz_defined-function locations,
-            1215 strings with 11779 characters,
-and the built_in function-call counts, 14667 in all, are:
-= -- 1043
-> -- 463
-< -- 39
-+ -- 603
-- -- 347
-* -- 1007
-:= -- 2070
+            1251 strings with 15853 characters,
+and the built_in function-call counts, 36991 in all, are:
+= -- 2256
+> -- 1585
+< -- 155
++ -- 1770
+- -- 1207
+* -- 2467
+:= -- 4786
 add.period$ -- 0
-call.type$ -- 2
-change.case$ -- 10
-chr.to.int$ -- 72
-cite$ -- 2
-duplicate$ -- 1238
-empty$ -- 1191
-format.name$ -- 100
-if$ -- 2657
+call.type$ -- 5
+change.case$ -- 37
+chr.to.int$ -- 156
+cite$ -- 8
+duplicate$ -- 3524
+empty$ -- 2997
+format.name$ -- 305
+if$ -- 6493
 int.to.chr$ -- 0
-int.to.str$ -- 3
+int.to.str$ -- 11
 missing$ -- 0
-newline$ -- 106
-num.names$ -- 43
-pop$ -- 441
+newline$ -- 268
+num.names$ -- 167
+pop$ -- 1452
 preamble$ -- 1
-purify$ -- 23
+purify$ -- 71
 quote$ -- 0
-skip$ -- 269
+skip$ -- 832
 stack$ -- 0
-substring$ -- 2169
-swap$ -- 276
-text.length$ -- 55
+substring$ -- 4300
+swap$ -- 937
+text.length$ -- 156
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 56
+type$ -- 158
 warning$ -- 0
-while$ -- 275
+while$ -- 622
 width$ -- 0
-write$ -- 105
+write$ -- 264
+(There was 1 error message)

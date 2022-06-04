@@ -1,5 +1,16 @@
 \section{Introduzione}
-\textcolor{blue}{\lipsum[1-2]}
+
+I sistemi per l'analisi microfluidica a singola cellula richiedono soluzioni tecnologiche per contare, intrappolare, focalizzare, separare e identificare le proprietà della cellula. 
+
+Possono essere identificate le proprietà di singole cellule basandosi su differenze nelle dimensioni e nelle proprietà dielettriche, sfruttando tecniche non invasive e senza richiedere l'ausilio di labelling cellulare.
+
+Tra le differenti tecniche risalta l'analisi di impedenza in microfluidica. Si utilizzano più coppie di elettrodi, poste intorno al canale microfluidico, per applicare una tensione a frequenze discrete e misurare le fluttuazioni della corrente elettrica. Tali fluttuazioni sono dovute al passaggio della cellula all'interno del canale e quindi all'interno del campo elettrico non uniforme generato dagli elettrodi. 
+
+Tali sistemi possono essere più o meno accurati a seconda della configurazione utilizzata.
+
+In questo report viene presentata l'analisi di una tecnica di compensazione per eliminare la dipendenza dalla posizione nel canale che affligge i segnali misurati e non permette una corretta stima del diametro cellulare.
+
+Tale tecnica di compensazione sfrutta la dipendenza del diametro elettrico dal parametro di forma, legato alle proprietà del segnale misurato. Nonostante le diverse famiglie analizzate (differenti diametri) appaiono come segnali non distinguibili il mapping mediante tale procedura di compensazione permette di produrre dei segnali dove le diverse famiglie sono chiaramente distinguibili.
 
 \section{Background}
 
@@ -15,19 +26,21 @@
 	\includegraphics[width=.95\linewidth]{signal_visualization_fig.pdf}
 	\caption{}
 \end{subfigure}
-\caption{}
+\caption{Schema rappresentativo il citometro ad impedenza con la configurazione di elettrodi selezionata e la cellula passante (a); segnali della corrente differenziale misurata per 5 diversi campioni (b)}
 \label{fig:generale}
 \end{figure*}
 
-Il citometro ad impedenza è un dispositivo COMPLETA COMPLETA
+Il citometro ad impedenza è un dispositivo microfluidico utilizzato per misurare il campo elettrico all'interno di un microcanale dove passa una cellula. La cellula attraversa no specifico pattern di elettrodi sul quale viene applicata un tensione alternata e questo porta ad una variazione della corrente misurata.
 
-Ovvero n on è altro che un microcanale riempito di un buffer conduttivo al cui interno passano delle correnti elettriche. Nel dispositivo in questione si applica un potenziale all'elettrodo centrale e si misura una corrente differenziale tra i due elettrodi laterali.
+Ovvero si considera un microcanale riempito di un buffer conduttivo al cui interno passano delle correnti elettriche. Nel dispositivo in questione si applica un potenziale all'elettrodo centrale e si misura una corrente differenziale tra i due elettrodi laterali.
 
-METTI CREF FIGURA
+Si utilizzando basse frequenze per determinare le proprietà sulla dimensione della cellula in quanto il segnale è tipicamente proporzionale al volume cellulare. Alte frequenze, invece, vengono utilizzare per avere informazioni sulla conduttività della membrana cellulare.
+
+Nel seguente report viene considerata una configurazione ad elettrodi coplanari rappresentata in \cref{fig:generale}.
 
 Tramite la misura di corrente differenziale è possibile stimare alcune proprietà della cellula che passa nel canale. In particolare, al passaggio delle cellula, si misura un segnale con una forma d'onda di tipo gaussiana bipolare.
 
-Tramite il segnale di picco è possibile stimare il diametro. Il segnale è proporzionale al volume della cellula per cui il diametro sarà legato all'ampiezza del segnale ($a$) come:
+Tramite l'ampiezza di picco è possibile stimare il diametro. Il segnale è proporzionale al volume della cellula per cui il diametro sarà legato all'ampiezza del segnale ($a$) come:
 
 
 \begin{equation}
@@ -38,11 +51,11 @@ Dove $G$ è un guadagno che risente delle proprietà elettriche del citometro.
 
 \subsection{Gaussiana bipolare}
 
-\begin{figure}
+\begin{figure}[b!]
 		\centering
 		\footnotesize{ \def\svgwidth{0.95\linewidth}
 			\input{bipolarGaussian.pdf_tex}}
-	\caption{}
+	\caption{Forma d'onda di tipo gaussiana bipolare identificata dall'ampiezza $a$, punto centrare $t_c$, larghezza a metà altezza $2\sigma$ e distanza picco-picco $\delta$.}
 	\label{fig:gaussiana}
 \end{figure}
 
@@ -54,19 +67,23 @@ La gaussiana bipolare è una forma d'onda caratteristica composta da due gaussia
 	\label{eq:gaussianabipolare}
 \end{equation}
 
-Ovvero, considerata un'ampiezza di riferimento $a$ (i.e. il valore massimo di picco), è la somma di due gaussiane nel tempo di cui la seconda ribaltata. La distanza picco-picco è pari a $\delta$ e si introduce un parametro di centratura $t_c$. Le due gaussiane condividono la medesima deviazione standard $\sigma$ e sono identificate dall'equazione:
+Ovvero, considerata un'ampiezza di riferimento $a$ (i.e. il valore massimo di picco), è la somma di due gaussiane nel tempo di cui la seconda ribaltata. La distanza picco-picco è pari a $\delta$ e si introduce un parametro di centratura $t_c$. Le due gaussiane condividono la medesima deviazione standard $\sigma$ e sono identificate dalle equazioni:
 
 \begin{equation}
-	g_{\pm}(t)=\frac{-\left(t-\left(t_{c} \pm(\delta / 2)\right)\right)^{2}}{2 \sigma^{2}}
+	g_{+}(t)=\frac{-\left(t-\left(t_{c} +(\delta / 2)\right)\right)^{2}}{2 \sigma^{2}}
 \end{equation}
 
-Dove il segno $\pm$ va riferimento alla gaussiana positiva o ribaltata.
+E:
+
+\begin{equation}
+	g_{-}(t)=\frac{-\left(t-\left(t_{c} -(\delta / 2)\right)\right)^{2}}{2 \sigma^{2}}
+\end{equation} 
 
 \subsection{Procedura di fitting}
 
-Partendo dai dati sperimentali è necessario introdurre una procedura di fitting numerico per identificare la gaussiana, e quindi i suoi quattro parametri descrittivi, tale da rappresentare il segnale analizzato.
+Partendo dai dati sperimentali è necessario introdurre una procedura di fitting numerico per identificare la gaussiana, e quindi i suoi quattro parametri descrittivi, tale da rappresentare il segnale analizzato \cite{caselli_simple_2016}.
 
-Tale procedura di fitting viene implmentata secondo un algoritmo di ottimizzazione. Ovvero, si cerca di ridurre la differenza tra il dato misurato $[d]_i$ e il template di fitting ($g$) allo stesso instante temporale. 
+Tale procedura di fitting viene implementata secondo un algoritmo di ottimizzazione. Ovvero, si cerca di ridurre la differenza tra il dato misurato $[d]_i$ e il template di fitting ($g$) allo stesso instante temporale. 
 
 Definita la funzione di errore come tale differenza:
 
@@ -84,11 +101,11 @@ Si cerca di minimizzare la funzione obiettivo definita proprio come la norma del
 \subsection{Accuratezza}
 
 
-I dispositivi microfluidi possono essere più o meno accurati. Questo è legato alla configurazione degli elettrodi, alla geometria e COMPLETA COMPLETA
+I dispositivi microfluidi possono essere più o meno accurati. Questo è legato alla configurazione degli elettrodi, alla geometria, al mezzo di sospensione e velocità del flusso \cite{sun_single-cell_2010}.
 
 In particolare, per il caso di riferimento si osserva una dipendenza del segnale dalla posizione all'interno del canale. Nonostante l'ampiezza del picco della gaussiana sia correlata con il diametro cellulare si osserva una dipendenza anche dalla posizione.
 
-Ovvero, a parità di diametro, una cellula passante vicino agli elettrodi darà un picco di ampiezza maggiore alla stessa cellula passante ad una distanza maggiore.
+Ovvero, a parità di diametro, una cellula passante vicino agli elettrodi darà un picco di ampiezza maggiore alla stessa cellula passante ad una distanza maggiore \cite{spencer_high_2016}.
 
 Nonostante nella configurazione utilizzata non si può avere una misura diretta della posizione all'interno del canale è possibile ottenerne una stima effettuando una compensazione del segnale tenendo conto della correlazione tra la posizione e lo shape parameters.
 
@@ -116,25 +133,53 @@ Si possono quindi usare tali coefficienti della retta per correggere il diametro
 \end{figure}
 
 
+
+
+\subsection{Dataset di riferimento}
+
+Il dataset di riferimento è un insieme di dati grezzi di citometro ad impedenza.  
+
+Per il dispositivo in questione il guadagno è pari a 10.5 $\mu$m / A\textsuperscript{1/3}. I segnali sono campionati con una frequenza $f_s=115$ kHz con un totale di oltre 50.000 segnali.
+
+Sono presenti i segnali di tre famiglie di biglie di test con diametro nominale di $5.2,\:6\text{ e }7 \mu m$. 
+
+\section{Risultati}
+
+Inizialmente la procedura viene applicata su un dataset ristretto considerando 400 segnali. Vengono selezionati quindi i segnali di indice da 400 a 800.
+
+Successivamente la procedura verrà applicata anche su un riferimento più esteso.
+
+\subsection{Fitting numerico}
+
+A partire dal singolo segnale all'interno dell'intero dataset è possibile fittare la gaussiana bipolare andando a stimarne i quattro coefficienti descrittivi.
+
+Considerando il template in \cref{eq:gaussianabipolare} è possibile utilizzare il comando Matlab \texttt{fit()} fornendo il template stesso, i dati e i valori iniziali per la stima ai minimi quadrati.
+
+Inoltre, essendo il segnale molto piccolo $\propto 10^{-6}$ è utile normalizzare il segnale di ampiezza e scalare l'asse dei tempi riportandolo in secondi nel range $[0;\:{1\over f_s}]$, dove $f_s$ è la frequenza di campionamento il cui inverso indica l'ultimo campione temporale.
+
+A questo deve seguire poi necessariamente una riscalatura nel dominio originario. 
+
+Un esempio di fitting è presente in \cref{fig:fitted}.
+
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=0.9\linewidth]{normalized_diam_figs}
-	\caption{}
+	\caption{Andamento dello shape parameter rispetto il diametro normalizzato. Sono raffigurati i campioni delle tre famiglie distinte con colori differenti e la retta ottenuta con una procedura di fitting lineare.}
 	\label{fig:normalized}
 \end{figure}
 
 \begin{figure*}[t!]
 	\centering
 	\begin{subfigure}{0.5\linewidth}
-			\centering
-	\includegraphics[width=0.9\linewidth]{histogram_figs}
-\caption{}
-	\end{subfigure}\hfill
-\begin{subfigure}{0.5\linewidth}
 		\centering
-	\includegraphics[width=0.9\linewidth]{histogram_corrected2_fig}
-	\caption{}
-\end{subfigure}
+		\includegraphics[width=0.9\linewidth]{histogram_figs}
+		\caption{}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.5\linewidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{histogram_corrected2_fig}
+		\caption{}
+	\end{subfigure}
 	\caption{}
 	\label{fig:histogram}
 \end{figure*}
@@ -142,13 +187,13 @@ Si possono quindi usare tali coefficienti della retta per correggere il diametro
 \begin{figure*}[t!]
 	\centering
 	\begin{subfigure}{0.5\linewidth}
-			\centering
+		\centering
 		\includegraphics[width=0.9\linewidth]{scatter_fig}
 		\caption{}
 		\label{fig:scatter_init}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.5\linewidth}
-			\centering
+		\centering
 		\includegraphics[width=0.9\linewidth]{scatter_corrected2_fig}
 		\caption{}
 	\end{subfigure}
@@ -174,11 +219,12 @@ Si possono quindi usare tali coefficienti della retta per correggere il diametro
 \end{figure*}
 
 
+\subsection{Compensazione}
 
 
-\begin{figure*}[t!]
+\begin{figure*}[h!]
 	\centering
-		\begin{subfigure}{0.33\linewidth}
+	\begin{subfigure}{0.33\linewidth}
 		\centering
 		\includegraphics[width=0.9\linewidth]{histogram_data}
 		\caption{}
@@ -194,62 +240,24 @@ Si possono quindi usare tali coefficienti della retta per correggere il diametro
 		\caption{}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.33\linewidth}
-	\centering
-	\includegraphics[width=0.9\linewidth]{histogram_corrected_fig}
-	\caption{}
-\end{subfigure}\hfill
+		\centering
+		\includegraphics[width=0.9\linewidth]{histogram_corrected_fig}
+		\caption{}
+	\end{subfigure}\hfill
 	\begin{subfigure}{0.33\linewidth}
-	\centering
-	\includegraphics[width=0.9\linewidth]{density_diam_corr_shape}
-	\caption{}
-\end{subfigure}\hfill
-\begin{subfigure}{0.33\linewidth}
-	\centering
-	\includegraphics[width=0.9\linewidth]{density_diam_corr_velocity}
-	\caption{}
-\end{subfigure}
+		\centering
+		\includegraphics[width=0.9\linewidth]{density_diam_corr_shape}
+		\caption{}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.33\linewidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{density_diam_corr_velocity}
+		\caption{}
+	\end{subfigure}
 	\caption{}
 	\label{fig:density}
 \end{figure*}
 
-\begin{figure}[t!]
-	\centering
-	\includegraphics[width=0.9\linewidth]{normalized_D}
-	\caption{}
-	\label{fig:normalizedDensity}
-\end{figure}
-
-
-
-\subsection{Dataset di riferimento}
-
-Il dataset di riferimento è un insieme di dati grezzi di citometro ad impedenza.  
-
-Per il dispositivo in questione il guadagno è pari a 10.5 $\mu$m / A\textsuperscript{1/3}. I segnali sono campionati con una frequenza $f_s=115$ kHz con un totale di oltre 50.000 segnali.
-
-
-PARLA DEL DATASET E DEI PARAMETRI 
-
-\section{Risultati}
-
-Inizialmente la procedura viene applicata su un dataset ristretto considerando 400 segnali. Vengono selezionati quindi i segnali di indice da 400 a 800.
-
-Successivamente la procedura verrà applicata anche su un riferimento più esteso.
-
-\subsection{Fitting numerico}
-
-A partire dal singolo segnale all'interno dell'intero dataset è possibile fittare la gaussiana bipolare andando a stimarne i quattro coefficienti descrittivi.
-
-Considerando il template in \cref{eq:gaussianabipolare} è possibile utilizzare il comando Matlab \texttt{fit()} fornendo il template stesso, i dati e i valori iniziali per la stima ai minimi quadrati.
-
-Inoltre, essendo il segnale molto piccolo $\propto 10^{-6}$ è utile normalizzare il segnale di ampiezza e scalare l'asse dei tempi riportandolo in secondi nel range $[0;\:{1\over f_s}]$, dove $f_s$ è la frequenza di campionamento il cui inverso indica l'ultimo campione temporale.
-
-A questo deve seguire poi necessariamente una riscalatura nel dominio originario. 
-
-Un esempio di fitting è presente in \cref{fig:fitted}.
-
-
-\subsection{Compensazione}
 
 Per la procedura di compensazione è necessario stimare i coefficienti di un fitting lineare. Tale fitting deve essere fatto nello spazio $[{\delta\over \sigma};\:{D\over d}$] ed è quindi necessario normalizzare i diametri elettrici rispetto i singoli diametri nominali delle tre famiglie. 
 
@@ -268,7 +276,27 @@ Tramite tali coefficienti è possibile correggere i valori tramite l'\cref{eq:co
 Si ottengono quindi le famiglie separate sia nello scatter plot dello shape parameter che della velocità, in \cref{fig:scatter} e \cref{fig:velocity}.
 
 
+\textcolor{blue}{\lipsum[1-2]}
+
+\subsection{Distribuzioni}
+
+\begin{figure}[b!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{normalized_D}
+	\caption{}
+	\label{fig:normalizedDensity}
+\end{figure}
+
+
+
+PARLA DELLA SEPARAZIONE DEGLI ISTOGRAMMI E DELLE FAMIGLIE + TABELLA
+
+
+
 \subsection{Estensione del dominio di interesse}
+
+
+
 
 La stessa procedura può essere applicata anche su una quantità di segnali notevolmente maggiore. Vengono quindi considerati, nello stesso dataset di riferimento, i segnali di indice a 200 a 35200. 
 
@@ -276,9 +304,9 @@ La procedura può essere applicata allo stesso modo ma gli scatter plot vengono 
 
 
 \section{Conclusioni}
+\textcolor{blue}{\lipsum[1]}
 
-
-%\pagebreak
+\pagebreak
 \section*{Disponibilità dei dati}
 
 Il materiale è disponibile alla repository online del progetto: \url{https://github.com/mastroalex/curve-fitting}

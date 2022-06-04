@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.28)  4 JUN 2022 13:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.28)  4 JUN 2022 17:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1468,7 +1468,7 @@ Package biblatex Info: ... file 'report_curve-fitting.bbl' found.
 Package biblatex Info: Reference section=0 on input line 150.
 Package biblatex Info: Reference segment=0 on input line 150.
  (./testo.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1337) has occurred while \output is active []
 
 
 (./figures//channel_draw.pdf_tex
@@ -1532,16 +1532,16 @@ Package pdftex.def Info: figures//channel_draw.pdf , page2 used on input line 6
 2.
 (pdftex.def)             Requested size: 297.80121pt x 138.6658pt.
 )
-<../code/figs//signal_visualization_fig.pdf, id=6, 372.39125pt x 304.13625pt>
+<../code/figs//signal_visualization_fig.pdf, id=6, 372.39125pt x 294.09875pt>
 File: ../code/figs//signal_visualization_fig.pdf Graphic file (type pdf)
 <use ../code/figs//signal_visualization_fig.pdf>
 Package pdftex.def Info: ../code/figs//signal_visualization_fig.pdf  used on in
-put line 15.
-(pdftex.def)             Requested size: 188.60204pt x 154.03542pt.
+put line 26.
+(pdftex.def)             Requested size: 188.60204pt x 148.95174pt.
 <figures//logo.png, id=7, 336.384pt x 337.698pt>
 File: figures//logo.png Graphic file (type png)
 <use figures//logo.png>
-Package pdftex.def Info: figures//logo.png  used on input line 29.
+Package pdftex.def Info: figures//logo.png  used on input line 36.
 (pdftex.def)             Requested size: 44.82474pt x 45.0pt.
 
 
@@ -1610,182 +1610,154 @@ on: multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex.exe (file ./figures//bipolarGaussian.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 1688) in paragraph at lines 87--88
-\T1/stix/m/n/12 meno ac-cu-rati. Questo è legato alla con-fig-u-
- []
-
-
-Underfull \hbox (badness 1163) in paragraph at lines 87--88
-\T1/stix/m/n/12 razione degli elet-trodi, alla ge-ome-tria e COM-
- []
-
-
-Underfull \hbox (badness 1009) in paragraph at lines 93--94
+Underfull \hbox (badness 1009) in paragraph at lines 110--111
 \T1/stix/m/n/12 all'interno del canale è pos-si-bile ot-ten-erne una
  []
 
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 95.
+(amsmath)                 on input line 112.
 
-<../code/figs//fitted.pdf, id=52, 366.36874pt x 304.13625pt>
+<../code/figs//fitted.pdf, id=69, 366.36874pt x 304.13625pt>
 File: ../code/figs//fitted.pdf Graphic file (type pdf)
 <use ../code/figs//fitted.pdf>
-Package pdftex.def Info: ../code/figs//fitted.pdf  used on input line 113.
+Package pdftex.def Info: ../code/figs//fitted.pdf  used on input line 130.
 (pdftex.def)             Requested size: 218.84715pt x 181.67566pt.
-<../code/figs//normalized_diam_figs.pdf, id=53, 371.3875pt x 291.0875pt>
-File: ../code/figs//normalized_diam_figs.pdf Graphic file (type pdf)
-<use ../code/figs//normalized_diam_figs.pdf>
-Package pdftex.def Info: ../code/figs//normalized_diam_figs.pdf  used on input 
-line 121.
-(pdftex.def)             Requested size: 218.84715pt x 171.53137pt.
-<../code/figs//histogram_figs.pdf, id=54, 357.335pt x 304.13625pt>
-File: ../code/figs//histogram_figs.pdf Graphic file (type pdf)
-<use ../code/figs//histogram_figs.pdf>
-Package pdftex.def Info: ../code/figs//histogram_figs.pdf  used on input line 1
-30.
-(pdftex.def)             Requested size: 223.34712pt x 190.0986pt.
-<../code/figs//histogram_corrected2_fig.pdf, id=55, 357.335pt x 304.13625pt>
-File: ../code/figs//histogram_corrected2_fig.pdf Graphic file (type pdf)
-<use ../code/figs//histogram_corrected2_fig.pdf>
-Package pdftex.def Info: ../code/figs//histogram_corrected2_fig.pdf  used on in
-put line 135.
-(pdftex.def)             Requested size: 223.34712pt x 190.0986pt.
-<../code/figs//scatter_fig.pdf, id=56, 365.365pt x 294.09875pt>
-File: ../code/figs//scatter_fig.pdf Graphic file (type pdf)
-<use ../code/figs//scatter_fig.pdf>
-Package pdftex.def Info: ../code/figs//scatter_fig.pdf  used on input line 146.
 
-(pdftex.def)             Requested size: 223.34712pt x 179.7814pt.
-<../code/figs//scatter_corrected2_fig.pdf, id=57, 365.365pt x 294.09875pt>
-File: ../code/figs//scatter_corrected2_fig.pdf Graphic file (type pdf)
-<use ../code/figs//scatter_corrected2_fig.pdf>
-Package pdftex.def Info: ../code/figs//scatter_corrected2_fig.pdf  used on inpu
-t line 152.
-(pdftex.def)             Requested size: 223.34712pt x 179.7814pt.
-<../code/figs//velocity_fig.pdf, id=58, 365.365pt x 294.09875pt>
-File: ../code/figs//velocity_fig.pdf Graphic file (type pdf)
-<use ../code/figs//velocity_fig.pdf>
-Package pdftex.def Info: ../code/figs//velocity_fig.pdf  used on input line 164
-.
-(pdftex.def)             Requested size: 223.34712pt x 179.7814pt.
-<../code/figs//velocity_corrected_fig.pdf, id=59, 365.365pt x 294.09875pt>
-File: ../code/figs//velocity_corrected_fig.pdf Graphic file (type pdf)
-<use ../code/figs//velocity_corrected_fig.pdf>
-Package pdftex.def Info: ../code/figs//velocity_corrected_fig.pdf  used on inpu
-t line 169.
-(pdftex.def)             Requested size: 223.34712pt x 179.7814pt.
-<../code/figs2//histogram_data.pdf, id=60, 363.3575pt x 304.13625pt>
-File: ../code/figs2//histogram_data.pdf Graphic file (type pdf)
-<use ../code/figs2//histogram_data.pdf>
-Package pdftex.def Info: ../code/figs2//histogram_data.pdf  used on input line 
-183.
-(pdftex.def)             Requested size: 147.4099pt x 123.38797pt.
-<../code/figs2//density_diam_shape.pdf, id=61, 369.38pt x 294.09875pt>
-File: ../code/figs2//density_diam_shape.pdf Graphic file (type pdf)
-<use ../code/figs2//density_diam_shape.pdf>
-Package pdftex.def Info: ../code/figs2//density_diam_shape.pdf  used on input l
-ine 188.
-(pdftex.def)             Requested size: 147.4099pt x 117.36815pt.
-<../code/figs2//density_diam_velocity.pdf, id=62, 369.38pt x 294.09875pt>
-File: ../code/figs2//density_diam_velocity.pdf Graphic file (type pdf)
-<use ../code/figs2//density_diam_velocity.pdf>
-Package pdftex.def Info: ../code/figs2//density_diam_velocity.pdf  used on inpu
-t line 193.
-(pdftex.def)             Requested size: 147.4099pt x 117.36815pt.
-<../code/figs2//histogram_corrected_fig.pdf, id=63, 363.3575pt x 304.13625pt>
-File: ../code/figs2//histogram_corrected_fig.pdf Graphic file (type pdf)
-<use ../code/figs2//histogram_corrected_fig.pdf>
-Package pdftex.def Info: ../code/figs2//histogram_corrected_fig.pdf  used on in
-put line 198.
-(pdftex.def)             Requested size: 147.4099pt x 123.38797pt.
-<../code/figs2//density_diam_corr_shape.pdf, id=64, 369.38pt x 294.09875pt>
-File: ../code/figs2//density_diam_corr_shape.pdf Graphic file (type pdf)
-<use ../code/figs2//density_diam_corr_shape.pdf>
-Package pdftex.def Info: ../code/figs2//density_diam_corr_shape.pdf  used on in
-put line 203.
-(pdftex.def)             Requested size: 147.4099pt x 117.36815pt.
-<../code/figs2//density_diam_corr_velocity.pdf, id=65, 369.38pt x 294.09875pt>
-File: ../code/figs2//density_diam_corr_velocity.pdf Graphic file (type pdf)
-<use ../code/figs2//density_diam_corr_velocity.pdf>
-Package pdftex.def Info: ../code/figs2//density_diam_corr_velocity.pdf  used on
- input line 208.
-(pdftex.def)             Requested size: 147.4099pt x 117.36815pt.
-<../code/figs2//normalized_D.pdf, id=66, 370.38374pt x 294.09875pt>
-File: ../code/figs2//normalized_D.pdf Graphic file (type pdf)
-<use ../code/figs2//normalized_D.pdf>
-Package pdftex.def Info: ../code/figs2//normalized_D.pdf  used on input line 21
-7.
-(pdftex.def)             Requested size: 218.84715pt x 173.77254pt.
-
-Underfull \hbox (badness 1024) in paragraph at lines 237--238
+Underfull \hbox (badness 1024) in paragraph at lines 150--151
 []\T1/stix/m/n/12 Successivamente la pro-ce-dura verrà ap-pli-cata
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 []\T1/stix/m/n/12 A par-tire dal sin-golo seg-nale all'interno
  []
 
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-43.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[3 <../code/figs//fitted.pdf>]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+56.
+
 (c:/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
+<../code/figs//normalized_diam_figs.pdf, id=76, 371.3875pt x 291.0875pt>
+File: ../code/figs//normalized_diam_figs.pdf Graphic file (type pdf)
+<use ../code/figs//normalized_diam_figs.pdf>
+Package pdftex.def Info: ../code/figs//normalized_diam_figs.pdf  used on input 
+line 166.
+(pdftex.def)             Requested size: 218.84715pt x 171.53137pt.
+<../code/figs//histogram_figs.pdf, id=77, 357.335pt x 304.13625pt>
+File: ../code/figs//histogram_figs.pdf Graphic file (type pdf)
+<use ../code/figs//histogram_figs.pdf>
+Package pdftex.def Info: ../code/figs//histogram_figs.pdf  used on input line 1
+75.
+(pdftex.def)             Requested size: 223.34712pt x 190.0986pt.
+<../code/figs//histogram_corrected2_fig.pdf, id=78, 357.335pt x 304.13625pt>
+File: ../code/figs//histogram_corrected2_fig.pdf Graphic file (type pdf)
+<use ../code/figs//histogram_corrected2_fig.pdf>
+Package pdftex.def Info: ../code/figs//histogram_corrected2_fig.pdf  used on in
+put line 180.
+(pdftex.def)             Requested size: 223.34712pt x 190.0986pt.
+<../code/figs//scatter_fig.pdf, id=79, 365.365pt x 294.09875pt>
+File: ../code/figs//scatter_fig.pdf Graphic file (type pdf)
+<use ../code/figs//scatter_fig.pdf>
+Package pdftex.def Info: ../code/figs//scatter_fig.pdf  used on input line 191.
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(pdftex.def)             Requested size: 223.34712pt x 179.7814pt.
+<../code/figs//scatter_corrected2_fig.pdf, id=80, 365.365pt x 294.09875pt>
+File: ../code/figs//scatter_corrected2_fig.pdf Graphic file (type pdf)
+<use ../code/figs//scatter_corrected2_fig.pdf>
+Package pdftex.def Info: ../code/figs//scatter_corrected2_fig.pdf  used on inpu
+t line 197.
+(pdftex.def)             Requested size: 223.34712pt x 179.7814pt.
+<../code/figs//velocity_fig.pdf, id=81, 365.365pt x 294.09875pt>
+File: ../code/figs//velocity_fig.pdf Graphic file (type pdf)
+<use ../code/figs//velocity_fig.pdf>
+Package pdftex.def Info: ../code/figs//velocity_fig.pdf  used on input line 209
+.
+(pdftex.def)             Requested size: 223.34712pt x 179.7814pt.
+<../code/figs//velocity_corrected_fig.pdf, id=82, 365.365pt x 294.09875pt>
+File: ../code/figs//velocity_corrected_fig.pdf Graphic file (type pdf)
+<use ../code/figs//velocity_corrected_fig.pdf>
+Package pdftex.def Info: ../code/figs//velocity_corrected_fig.pdf  used on inpu
+t line 214.
+(pdftex.def)             Requested size: 223.34712pt x 179.7814pt.
+<../code/figs2//histogram_data.pdf, id=83, 363.3575pt x 304.13625pt>
+File: ../code/figs2//histogram_data.pdf Graphic file (type pdf)
+<use ../code/figs2//histogram_data.pdf>
+Package pdftex.def Info: ../code/figs2//histogram_data.pdf  used on input line 
+229.
+(pdftex.def)             Requested size: 147.4099pt x 123.38797pt.
+<../code/figs2//density_diam_shape.pdf, id=84, 369.38pt x 294.09875pt>
+File: ../code/figs2//density_diam_shape.pdf Graphic file (type pdf)
+<use ../code/figs2//density_diam_shape.pdf>
+Package pdftex.def Info: ../code/figs2//density_diam_shape.pdf  used on input l
+ine 234.
+(pdftex.def)             Requested size: 147.4099pt x 117.36815pt.
+<../code/figs2//density_diam_velocity.pdf, id=85, 369.38pt x 294.09875pt>
+File: ../code/figs2//density_diam_velocity.pdf Graphic file (type pdf)
+<use ../code/figs2//density_diam_velocity.pdf>
+Package pdftex.def Info: ../code/figs2//density_diam_velocity.pdf  used on inpu
+t line 239.
+(pdftex.def)             Requested size: 147.4099pt x 117.36815pt.
+<../code/figs2//histogram_corrected_fig.pdf, id=86, 363.3575pt x 304.13625pt>
+File: ../code/figs2//histogram_corrected_fig.pdf Graphic file (type pdf)
+<use ../code/figs2//histogram_corrected_fig.pdf>
+Package pdftex.def Info: ../code/figs2//histogram_corrected_fig.pdf  used on in
+put line 244.
+(pdftex.def)             Requested size: 147.4099pt x 123.38797pt.
+<../code/figs2//density_diam_corr_shape.pdf, id=87, 369.38pt x 294.09875pt>
+File: ../code/figs2//density_diam_corr_shape.pdf Graphic file (type pdf)
+<use ../code/figs2//density_diam_corr_shape.pdf>
+Package pdftex.def Info: ../code/figs2//density_diam_corr_shape.pdf  used on in
+put line 249.
+(pdftex.def)             Requested size: 147.4099pt x 117.36815pt.
+<../code/figs2//density_diam_corr_velocity.pdf, id=88, 369.38pt x 294.09875pt>
+File: ../code/figs2//density_diam_corr_velocity.pdf Graphic file (type pdf)
+<use ../code/figs2//density_diam_corr_velocity.pdf>
+Package pdftex.def Info: ../code/figs2//density_diam_corr_velocity.pdf  used on
+ input line 254.
+(pdftex.def)             Requested size: 147.4099pt x 117.36815pt.
 
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[3 <../code/figs//fitted.pdf> <../code/figs//normalized_diam_figs.pdf>]
-
-LaTeX Warning: Text page 4 contains only floats.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \vbox (8.19066pt too high) has occurred while \output is active []
-
-
-
-LaTeX Warning: Text page 4 contains only floats.
-
-
-Overfull \vbox (8.19066pt too high) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[4 <../code/figs//histogram_figs.pdf> <../code/figs//histogram_corrected2_fig.p
-df> <../code/figs//scatter_fig.pdf> <../code/figs//scatter_corrected2_fig.pdf> 
-<../code/figs//velocity_fig.pdf> <../code/figs//velocity_corrected_fig.pdf>]
-Underfull \hbox (badness 2573) in paragraph at lines 256--257
+Underfull \hbox (badness 2573) in paragraph at lines 264--265
 \T1/stix/m/n/12 pa-ram-e-ters è pos-si-bile dis-tinguere tre famiglie
  []
 
 
-Underfull \hbox (badness 2452) in paragraph at lines 258--259
+Underfull \hbox (badness 2452) in paragraph at lines 266--267
 \T1/stix/m/n/12 ap-prossima l'andamento dello shape pa-ram-e-ter
  []
 
 
-Underfull \hbox (badness 1242) in paragraph at lines 258--259
+Underfull \hbox (badness 1242) in paragraph at lines 266--267
 \T1/stix/m/n/12 in fun-zione del di-ametro elet-trico nor-mal-iz-zato
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+stix on input line 
-260.
+268.
 (c:/texlive/2021/texmf-dist/tex/latex/stix/ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 )
+<../code/figs2//normalized_D.pdf, id=89, 370.38374pt x 294.09875pt>
+File: ../code/figs2//normalized_D.pdf Graphic file (type pdf)
+<use ../code/figs2//normalized_D.pdf>
+Package pdftex.def Info: ../code/figs2//normalized_D.pdf  used on input line 28
+5.
+(pdftex.def)             Requested size: 218.84715pt x 173.77254pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1794,39 +1766,136 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[5 <../code/figs2//histogram_data.pdf> <../code/figs2//density_diam_shape.pdf> 
+[4 <../code/figs//normalized_diam_figs.pdf>]
+
+LaTeX Warning: Text page 5 contains only floats.
+
+
+Overfull \vbox (8.19066pt too high) has occurred while \output is active []
+
+
+
+LaTeX Warning: Text page 5 contains only floats.
+
+
+Overfull \vbox (8.19066pt too high) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[5 <../code/figs//histogram_figs.pdf> <../code/figs//histogram_corrected2_fig.p
+df> <../code/figs//scatter_fig.pdf> <../code/figs//scatter_corrected2_fig.pdf> 
+<../code/figs//velocity_fig.pdf> <../code/figs//velocity_corrected_fig.pdf>]
+Underfull \vbox (badness 2181) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[6 <../code/figs2//histogram_data.pdf> <../code/figs2//density_diam_shape.pdf> 
 <../code/figs2//density_diam_velocity.pdf> <../code/figs2//histogram_corrected_
 fig.pdf> <../code/figs2//density_diam_corr_shape.pdf> <../code/figs2//density_d
 iam_corr_velocity.pdf> <../code/figs2//normalized_D.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
 []\T1/stix/m/n/12 Il ma-te-ri-ale è disponi-bile alla repos-i-tory
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
 \T1/stix/m/n/12 on-line del pro-getto: $\T1/cmtt/m/n/12 https : / / github . co
 m /
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 289--289
+Underfull \hbox (badness 1442) in paragraph at lines 317--317
+\T1/stix/m/it/12 ing \T1/stix/m/n/12 63.2 (Feb. 2016), pp. 415^^U422. \T1/stix/
+m/sc/12 issn\T1/stix/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 1838) in paragraph at lines 317--317
+\T1/stix/m/n/12 0018-9294, 1558-2531. \T1/stix/m/sc/12 doi\T1/stix/m/n/12 : $\T
+1/cmtt/m/n/12 10 . 1109 /
+ []
+
+
+Underfull \hbox (badness 1005) in paragraph at lines 317--317
+\T1/cmtt/m/n/12 TBME . 2015 . 2462292$\T1/stix/m/n/12 . \T1/stix/m/sc/12 url\T1
+/stix/m/n/12 : $\T1/cmtt/m/n/12 http : / /
+ []
+
+
+Underfull \hbox (badness 2057) in paragraph at lines 317--317
+\T1/cmtt/m/n/12 ieeexplore . ieee . org / document /
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 317--317
+\T1/stix/m/n/12 en. In: \T1/stix/m/it/12 Mi-croflu-idics and Nanoflu-idics \T1/
+stix/m/n/12 8.4
+ []
+
+
+Underfull \hbox (badness 1048) in paragraph at lines 317--317
+\T1/stix/m/n/12 ti-cle anal-y-sis us-ing sheath-less mi-croflu-idic
+ []
+
+
+Underfull \hbox (badness 2384) in paragraph at lines 317--317
+\T1/stix/m/n/12 impedance cy-tom-e-try''. en. In: \T1/stix/m/it/12 Lab on a
+ []
+
+
+Underfull \hbox (badness 1838) in paragraph at lines 317--317
+\T1/stix/m/it/12 Chip \T1/stix/m/n/12 16.13 (2016), pp. 2467^^U2473. \T1/stix/m
+/sc/12 issn\T1/stix/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 1838) in paragraph at lines 317--317
+\T1/stix/m/n/12 1473-0197, 1473-0189. \T1/stix/m/sc/12 doi\T1/stix/m/n/12 : $\T
+1/cmtt/m/n/12 10 . 1039 /
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 317--317
+\T1/cmtt/m/n/12 C6LC00339G$\T1/stix/m/n/12 . \T1/stix/m/sc/12 url\T1/stix/m/n/1
+2 : $\T1/cmtt/m/n/12 http : / / xlink .
+ []
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 317--317
 \T1/stix/m/n/12 mi-croflu-idic de-vices''. en. In: \T1/stix/m/it/12 Sen-sors an
 d
  []
 
 
-Underfull \hbox (badness 2653) in paragraph at lines 289--289
+Underfull \hbox (badness 2653) in paragraph at lines 317--317
 \T1/stix/m/it/12 Ac-tu-a-tors B: Chem-i-cal \T1/stix/m/n/12 247 (Aug. 2017),
  []
 
 
-Underfull \hbox (badness 2134) in paragraph at lines 289--289
+Underfull \hbox (badness 2134) in paragraph at lines 317--317
 \T1/stix/m/n/12 pp. 580^^U586. \T1/stix/m/sc/12 issn\T1/stix/m/n/12 : 09254005.
  \T1/stix/m/sc/12 doi\T1/stix/m/n/12 : $\T1/cmtt/m/n/12 10 .
  []
 
 
-Underfull \hbox (badness 1418) in paragraph at lines 289--289
+Underfull \hbox (badness 1418) in paragraph at lines 317--317
 \T1/cmtt/m/n/12 1016 / j . snb . 2017 . 03 . 035$\T1/stix/m/n/12 . \T1/stix/m/s
 c/12 url\T1/stix/m/n/12 :
  []
@@ -1839,7 +1908,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[6
+[7
 
 ])
 
@@ -1856,7 +1925,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[7
+[8
 
 
 ] (./report_curve-fitting.aux)
@@ -1865,11 +1934,11 @@ Package logreq Info: Writing requests to 'report_curve-fitting.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46429 strings out of 478579
- 1065583 string characters out of 5857457
- 1716784 words of memory out of 5000000
- 63617 multiletter control sequences out of 15000+600000
- 493875 words of font info for 126 fonts, out of 8000000 for 9000
+ 46454 strings out of 478579
+ 1066352 string characters out of 5857457
+ 1719992 words of memory out of 5000000
+ 63642 multiletter control sequences out of 15000+600000
+ 501869 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,19n,97p,1890b,1670s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc}{c:/texlive/2021
@@ -1882,10 +1951,10 @@ sftt1200.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/stix/stix-mathex.pf
 b><c:/texlive/2021/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb><c:/texli
 ve/2021/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb><c:/texlive/2021/tex
 mf-dist/fonts/type1/public/stix/stix-mathtt.pfb>
-Output written on report_curve-fitting.pdf (7 pages, 2023189 bytes).
+Output written on report_curve-fitting.pdf (8 pages, 2039269 bytes).
 PDF statistics:
- 584 PDF objects out of 1000 (max. 8388607)
- 470 compressed objects within 5 object streams
+ 604 PDF objects out of 1000 (max. 8388607)
+ 489 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  128 words of extra memory for PDF output out of 10000 (max. 10000000)
 
