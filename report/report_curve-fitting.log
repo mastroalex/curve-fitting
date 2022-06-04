@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.28)  4 JUN 2022 17:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.28)  4 JUN 2022 17:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1900,17 +1900,7 @@ Underfull \hbox (badness 1418) in paragraph at lines 317--317
 c/12 url\T1/stix/m/n/12 :
  []
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[7
-
-])
+)
 
 Package caption Warning: Unused \captionsetup[table] on input line 30.
 See the caption package documentation for explanation.
@@ -1925,8 +1915,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[8
-
+[7
 
 ] (./report_curve-fitting.aux)
 Package logreq Info: Writing requests to 'report_curve-fitting.run.xml'.
@@ -1936,7 +1925,7 @@ Package logreq Info: Writing requests to 'report_curve-fitting.run.xml'.
 Here is how much of TeX's memory you used:
  46454 strings out of 478579
  1066352 string characters out of 5857457
- 1719992 words of memory out of 5000000
+ 1719993 words of memory out of 5000000
  63642 multiletter control sequences out of 15000+600000
  501869 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1951,10 +1940,10 @@ sftt1200.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/stix/stix-mathex.pf
 b><c:/texlive/2021/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb><c:/texli
 ve/2021/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb><c:/texlive/2021/tex
 mf-dist/fonts/type1/public/stix/stix-mathtt.pfb>
-Output written on report_curve-fitting.pdf (8 pages, 2039269 bytes).
+Output written on report_curve-fitting.pdf (7 pages, 2038933 bytes).
 PDF statistics:
- 604 PDF objects out of 1000 (max. 8388607)
- 489 compressed objects within 5 object streams
+ 601 PDF objects out of 1000 (max. 8388607)
+ 487 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  128 words of extra memory for PDF output out of 10000 (max. 10000000)
 
