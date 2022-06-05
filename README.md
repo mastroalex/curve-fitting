@@ -20,8 +20,8 @@ A mapping according to the straight line interpolating the shape parameter and t
 
 ---
 
-Read the [report](https://github.com/mastroalex/resp-mech-simulink/blob/main/report/report_respiratory_simulink.pdf)
-
+Read the [report](https://github.com/mastroalex/curve-fitting/blob/main/report/report_curve-fitting.pdf)
 ---
 
-<img src="https://github.com/mastroalex/resp-mech-simulink/blob/main/report/figures/lung.svg" alt="Model" style="width:300px;"> 
+<img src="https://github.com/mastroalex/curve-fitting/blob/main/report/figures/Untitled.png" alt="Model" style="width:300px;"> 
+
