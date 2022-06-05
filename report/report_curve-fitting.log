@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.28)  4 JUN 2022 17:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.28)  5 JUN 2022 13:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1467,11 +1467,7 @@ Package biblatex Info: ... file 'report_curve-fitting.bbl' found.
 (./report_curve-fitting.bbl)
 Package biblatex Info: Reference section=0 on input line 150.
 Package biblatex Info: Reference segment=0 on input line 150.
- (./testo.tex
-Underfull \vbox (badness 1337) has occurred while \output is active []
-
-
-(./figures//channel_draw.pdf_tex
+ (./testo.tex (./figures//channel_draw.pdf_tex
 <figures//channel_draw.pdf, id=4, page=1, 577.7224pt x 269.0079pt>
 File: figures//channel_draw.pdf Graphic file (type pdf)
 <use figures//channel_draw.pdf, page 1>
@@ -1541,7 +1537,7 @@ put line 26.
 <figures//logo.png, id=7, 336.384pt x 337.698pt>
 File: figures//logo.png Graphic file (type png)
 <use figures//logo.png>
-Package pdftex.def Info: figures//logo.png  used on input line 36.
+Package pdftex.def Info: figures//logo.png  used on input line 34.
 (pdftex.def)             Requested size: 44.82474pt x 45.0pt.
 
 
@@ -1610,30 +1606,24 @@ on: multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex.exe (file ./figures//bipolarGaussian.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 1009) in paragraph at lines 110--111
+Underfull \hbox (badness 1009) in paragraph at lines 116--117
 \T1/stix/m/n/12 all'interno del canale è pos-si-bile ot-ten-erne una
  []
 
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 112.
+(amsmath)                 on input line 120.
 
+
+
+pdfTeX warning: pdflatex.exe (file ../code/figs//fitted.pdf): PDF inclusion: fo
+und PDF version <1.6>, but at most version <1.5> allowed
 <../code/figs//fitted.pdf, id=69, 366.36874pt x 304.13625pt>
 File: ../code/figs//fitted.pdf Graphic file (type pdf)
 <use ../code/figs//fitted.pdf>
-Package pdftex.def Info: ../code/figs//fitted.pdf  used on input line 130.
+Package pdftex.def Info: ../code/figs//fitted.pdf  used on input line 142.
 (pdftex.def)             Requested size: 218.84715pt x 181.67566pt.
-
-Underfull \hbox (badness 1024) in paragraph at lines 150--151
-[]\T1/stix/m/n/12 Successivamente la pro-ce-dura verrà ap-pli-cata
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
-[]\T1/stix/m/n/12 A par-tire dal sin-golo seg-nale all'interno
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1643,120 +1633,161 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [3 <../code/figs//fitted.pdf>]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-56.
+Underfull \hbox (badness 1024) in paragraph at lines 166--167
+[]\T1/stix/m/n/12 Successivamente la pro-ce-dura verrà ap-pli-cata
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+[]\T1/stix/m/n/12 A par-tire dal sin-golo seg-nale all'interno
+ []
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+72.
 (c:/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-<../code/figs//normalized_diam_figs.pdf, id=76, 371.3875pt x 291.0875pt>
+<../code/figs//normalized_diam_figs.pdf, id=86, 371.3875pt x 291.0875pt>
 File: ../code/figs//normalized_diam_figs.pdf Graphic file (type pdf)
 <use ../code/figs//normalized_diam_figs.pdf>
 Package pdftex.def Info: ../code/figs//normalized_diam_figs.pdf  used on input 
-line 166.
+line 182.
 (pdftex.def)             Requested size: 218.84715pt x 171.53137pt.
-<../code/figs//histogram_figs.pdf, id=77, 357.335pt x 304.13625pt>
+<../code/figs//histogram_figs.pdf, id=87, 357.335pt x 304.13625pt>
 File: ../code/figs//histogram_figs.pdf Graphic file (type pdf)
 <use ../code/figs//histogram_figs.pdf>
 Package pdftex.def Info: ../code/figs//histogram_figs.pdf  used on input line 1
-75.
+91.
 (pdftex.def)             Requested size: 223.34712pt x 190.0986pt.
-<../code/figs//histogram_corrected2_fig.pdf, id=78, 357.335pt x 304.13625pt>
+<../code/figs//histogram_corrected2_fig.pdf, id=88, 357.335pt x 304.13625pt>
 File: ../code/figs//histogram_corrected2_fig.pdf Graphic file (type pdf)
 <use ../code/figs//histogram_corrected2_fig.pdf>
 Package pdftex.def Info: ../code/figs//histogram_corrected2_fig.pdf  used on in
-put line 180.
+put line 197.
 (pdftex.def)             Requested size: 223.34712pt x 190.0986pt.
-<../code/figs//scatter_fig.pdf, id=79, 365.365pt x 294.09875pt>
+<../code/figs//scatter_fig.pdf, id=89, 365.365pt x 294.09875pt>
 File: ../code/figs//scatter_fig.pdf Graphic file (type pdf)
 <use ../code/figs//scatter_fig.pdf>
-Package pdftex.def Info: ../code/figs//scatter_fig.pdf  used on input line 191.
+Package pdftex.def Info: ../code/figs//scatter_fig.pdf  used on input line 208.
 
 (pdftex.def)             Requested size: 223.34712pt x 179.7814pt.
-<../code/figs//scatter_corrected2_fig.pdf, id=80, 365.365pt x 294.09875pt>
+<../code/figs//scatter_corrected2_fig.pdf, id=90, 365.365pt x 294.09875pt>
 File: ../code/figs//scatter_corrected2_fig.pdf Graphic file (type pdf)
 <use ../code/figs//scatter_corrected2_fig.pdf>
 Package pdftex.def Info: ../code/figs//scatter_corrected2_fig.pdf  used on inpu
-t line 197.
+t line 214.
 (pdftex.def)             Requested size: 223.34712pt x 179.7814pt.
-<../code/figs//velocity_fig.pdf, id=81, 365.365pt x 294.09875pt>
+<../code/figs//velocity_fig.pdf, id=91, 365.365pt x 294.09875pt>
 File: ../code/figs//velocity_fig.pdf Graphic file (type pdf)
 <use ../code/figs//velocity_fig.pdf>
-Package pdftex.def Info: ../code/figs//velocity_fig.pdf  used on input line 209
+Package pdftex.def Info: ../code/figs//velocity_fig.pdf  used on input line 226
 .
 (pdftex.def)             Requested size: 223.34712pt x 179.7814pt.
-<../code/figs//velocity_corrected_fig.pdf, id=82, 365.365pt x 294.09875pt>
+<../code/figs//velocity_corrected_fig.pdf, id=92, 365.365pt x 294.09875pt>
 File: ../code/figs//velocity_corrected_fig.pdf Graphic file (type pdf)
 <use ../code/figs//velocity_corrected_fig.pdf>
 Package pdftex.def Info: ../code/figs//velocity_corrected_fig.pdf  used on inpu
-t line 214.
+t line 231.
 (pdftex.def)             Requested size: 223.34712pt x 179.7814pt.
-<../code/figs2//histogram_data.pdf, id=83, 363.3575pt x 304.13625pt>
+<../code/figs2//histogram_data.pdf, id=93, 363.3575pt x 304.13625pt>
 File: ../code/figs2//histogram_data.pdf Graphic file (type pdf)
 <use ../code/figs2//histogram_data.pdf>
 Package pdftex.def Info: ../code/figs2//histogram_data.pdf  used on input line 
-229.
+246.
 (pdftex.def)             Requested size: 147.4099pt x 123.38797pt.
-<../code/figs2//density_diam_shape.pdf, id=84, 369.38pt x 294.09875pt>
+<../code/figs2//density_diam_shape.pdf, id=94, 369.38pt x 294.09875pt>
 File: ../code/figs2//density_diam_shape.pdf Graphic file (type pdf)
 <use ../code/figs2//density_diam_shape.pdf>
 Package pdftex.def Info: ../code/figs2//density_diam_shape.pdf  used on input l
-ine 234.
+ine 251.
 (pdftex.def)             Requested size: 147.4099pt x 117.36815pt.
-<../code/figs2//density_diam_velocity.pdf, id=85, 369.38pt x 294.09875pt>
+<../code/figs2//density_diam_velocity.pdf, id=95, 369.38pt x 294.09875pt>
 File: ../code/figs2//density_diam_velocity.pdf Graphic file (type pdf)
 <use ../code/figs2//density_diam_velocity.pdf>
 Package pdftex.def Info: ../code/figs2//density_diam_velocity.pdf  used on inpu
-t line 239.
+t line 256.
 (pdftex.def)             Requested size: 147.4099pt x 117.36815pt.
-<../code/figs2//histogram_corrected_fig.pdf, id=86, 363.3575pt x 304.13625pt>
+<../code/figs2//histogram_corrected_fig.pdf, id=96, 363.3575pt x 304.13625pt>
 File: ../code/figs2//histogram_corrected_fig.pdf Graphic file (type pdf)
 <use ../code/figs2//histogram_corrected_fig.pdf>
 Package pdftex.def Info: ../code/figs2//histogram_corrected_fig.pdf  used on in
-put line 244.
+put line 261.
 (pdftex.def)             Requested size: 147.4099pt x 123.38797pt.
-<../code/figs2//density_diam_corr_shape.pdf, id=87, 369.38pt x 294.09875pt>
+<../code/figs2//density_diam_corr_shape.pdf, id=97, 369.38pt x 294.09875pt>
 File: ../code/figs2//density_diam_corr_shape.pdf Graphic file (type pdf)
 <use ../code/figs2//density_diam_corr_shape.pdf>
 Package pdftex.def Info: ../code/figs2//density_diam_corr_shape.pdf  used on in
-put line 249.
+put line 266.
 (pdftex.def)             Requested size: 147.4099pt x 117.36815pt.
-<../code/figs2//density_diam_corr_velocity.pdf, id=88, 369.38pt x 294.09875pt>
+<../code/figs2//density_diam_corr_velocity.pdf, id=98, 369.38pt x 294.09875pt>
 File: ../code/figs2//density_diam_corr_velocity.pdf Graphic file (type pdf)
 <use ../code/figs2//density_diam_corr_velocity.pdf>
 Package pdftex.def Info: ../code/figs2//density_diam_corr_velocity.pdf  used on
- input line 254.
+ input line 271.
 (pdftex.def)             Requested size: 147.4099pt x 117.36815pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 2573) in paragraph at lines 264--265
-\T1/stix/m/n/12 pa-ram-e-ters è pos-si-bile dis-tinguere tre famiglie
- []
-
-
-Underfull \hbox (badness 2452) in paragraph at lines 266--267
+Underfull \hbox (badness 2452) in paragraph at lines 285--286
 \T1/stix/m/n/12 ap-prossima l'andamento dello shape pa-ram-e-ter
  []
 
 
-Underfull \hbox (badness 1242) in paragraph at lines 266--267
+Underfull \hbox (badness 1242) in paragraph at lines 285--286
 \T1/stix/m/n/12 in fun-zione del di-ametro elet-trico nor-mal-iz-zato
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+stix on input line 
-268.
+287.
 (c:/texlive/2021/texmf-dist/tex/latex/stix/ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 )
-<../code/figs2//normalized_D.pdf, id=89, 370.38374pt x 294.09875pt>
-File: ../code/figs2//normalized_D.pdf Graphic file (type pdf)
-<use ../code/figs2//normalized_D.pdf>
-Package pdftex.def Info: ../code/figs2//normalized_D.pdf  used on input line 28
-5.
-(pdftex.def)             Requested size: 218.84715pt x 173.77254pt.
+Overfull \hbox (2.67088pt too wide) in paragraph at lines 301--301
+[]|\T1/stix/m/n/10 Deviazione
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--301
+[]|\T1/stix/m/n/10 Coefficiente
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+[]|\T1/stix/m/n/10 Diametro
+ []
+
+
+Underfull \hbox (badness 1127) in paragraph at lines 310--310
+[][][]\T1/stix/m/sc/10.95 Tab. 1[][]: []|\T1/stix/m/n/10.95 Co-ef-fi-ci-enti de
+lla dis-tribuzione gaus-siana
+ []
+
+
+Underfull \hbox (badness 4792) in paragraph at lines 310--310
+\T1/stix/m/n/10.95 per le tre famiglie ot-tenuti dal fit-ting dei val-ori
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+[]\T1/stix/m/n/12 Chiaramente tale pro-ce-dura, sep-a-rando le
+ []
+
+
+Underfull \hbox (badness 6893) in paragraph at lines 316--317
+\T1/stix/m/n/12 famiglie, per-me-tte il cal-colo della loro dis-
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 318--320
+\T1/stix/m/n/12 della com-pen-sazione, è ev-i-dente come non sia
+ []
+
+
+Underfull \hbox (badness 7326) in paragraph at lines 318--320
+\T1/stix/m/n/12 pos-si-bile iden-ti-fi-care al-cun picco nel grafico
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1792,11 +1823,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [5 <../code/figs//histogram_figs.pdf> <../code/figs//histogram_corrected2_fig.p
 df> <../code/figs//scatter_fig.pdf> <../code/figs//scatter_corrected2_fig.pdf> 
 <../code/figs//velocity_fig.pdf> <../code/figs//velocity_corrected_fig.pdf>]
-Underfull \vbox (badness 2181) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+<../code/figs2//normalized_D.pdf, id=194, 370.38374pt x 294.09875pt>
+File: ../code/figs2//normalized_D.pdf Graphic file (type pdf)
+<use ../code/figs2//normalized_D.pdf>
+Package pdftex.def Info: ../code/figs2//normalized_D.pdf  used on input line 33
+0.
+(pdftex.def)             Requested size: 218.84715pt x 173.77254pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1810,102 +1842,100 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <../code/figs2//density_diam_velocity.pdf> <../code/figs2//histogram_corrected_
 fig.pdf> <../code/figs2//density_diam_corr_shape.pdf> <../code/figs2//density_d
 iam_corr_velocity.pdf> <../code/figs2//normalized_D.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
 []\T1/stix/m/n/12 Il ma-te-ri-ale è disponi-bile alla repos-i-tory
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
 \T1/stix/m/n/12 on-line del pro-getto: $\T1/cmtt/m/n/12 https : / / github . co
 m /
  []
 
 
-Underfull \hbox (badness 1442) in paragraph at lines 317--317
+Underfull \hbox (badness 1442) in paragraph at lines 360--360
 \T1/stix/m/it/12 ing \T1/stix/m/n/12 63.2 (Feb. 2016), pp. 415^^U422. \T1/stix/
 m/sc/12 issn\T1/stix/m/n/12 :
  []
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 317--317
+Underfull \hbox (badness 1838) in paragraph at lines 360--360
 \T1/stix/m/n/12 0018-9294, 1558-2531. \T1/stix/m/sc/12 doi\T1/stix/m/n/12 : $\T
 1/cmtt/m/n/12 10 . 1109 /
  []
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 317--317
+Underfull \hbox (badness 1005) in paragraph at lines 360--360
 \T1/cmtt/m/n/12 TBME . 2015 . 2462292$\T1/stix/m/n/12 . \T1/stix/m/sc/12 url\T1
 /stix/m/n/12 : $\T1/cmtt/m/n/12 http : / /
  []
 
 
-Underfull \hbox (badness 2057) in paragraph at lines 317--317
+Underfull \hbox (badness 2057) in paragraph at lines 360--360
 \T1/cmtt/m/n/12 ieeexplore . ieee . org / document /
  []
 
 
-Underfull \hbox (badness 1259) in paragraph at lines 317--317
+Underfull \hbox (badness 1259) in paragraph at lines 360--360
 \T1/stix/m/n/12 en. In: \T1/stix/m/it/12 Mi-croflu-idics and Nanoflu-idics \T1/
 stix/m/n/12 8.4
  []
 
 
-Underfull \hbox (badness 1048) in paragraph at lines 317--317
+Underfull \hbox (badness 1048) in paragraph at lines 360--360
 \T1/stix/m/n/12 ti-cle anal-y-sis us-ing sheath-less mi-croflu-idic
  []
 
 
-Underfull \hbox (badness 2384) in paragraph at lines 317--317
+Underfull \hbox (badness 2384) in paragraph at lines 360--360
 \T1/stix/m/n/12 impedance cy-tom-e-try''. en. In: \T1/stix/m/it/12 Lab on a
  []
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 317--317
+Underfull \hbox (badness 1838) in paragraph at lines 360--360
 \T1/stix/m/it/12 Chip \T1/stix/m/n/12 16.13 (2016), pp. 2467^^U2473. \T1/stix/m
 /sc/12 issn\T1/stix/m/n/12 :
  []
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 317--317
+Underfull \hbox (badness 1838) in paragraph at lines 360--360
 \T1/stix/m/n/12 1473-0197, 1473-0189. \T1/stix/m/sc/12 doi\T1/stix/m/n/12 : $\T
 1/cmtt/m/n/12 10 . 1039 /
  []
 
 
-Underfull \hbox (badness 3579) in paragraph at lines 317--317
+Underfull \hbox (badness 3579) in paragraph at lines 360--360
 \T1/cmtt/m/n/12 C6LC00339G$\T1/stix/m/n/12 . \T1/stix/m/sc/12 url\T1/stix/m/n/1
 2 : $\T1/cmtt/m/n/12 http : / / xlink .
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 317--317
+Underfull \hbox (badness 1226) in paragraph at lines 360--360
 \T1/stix/m/n/12 mi-croflu-idic de-vices''. en. In: \T1/stix/m/it/12 Sen-sors an
 d
  []
 
 
-Underfull \hbox (badness 2653) in paragraph at lines 317--317
+Underfull \hbox (badness 2653) in paragraph at lines 360--360
 \T1/stix/m/it/12 Ac-tu-a-tors B: Chem-i-cal \T1/stix/m/n/12 247 (Aug. 2017),
  []
 
 
-Underfull \hbox (badness 2134) in paragraph at lines 317--317
+Underfull \hbox (badness 2134) in paragraph at lines 360--360
 \T1/stix/m/n/12 pp. 580^^U586. \T1/stix/m/sc/12 issn\T1/stix/m/n/12 : 09254005.
  \T1/stix/m/sc/12 doi\T1/stix/m/n/12 : $\T1/cmtt/m/n/12 10 .
  []
 
 
-Underfull \hbox (badness 1418) in paragraph at lines 317--317
+Underfull \hbox (badness 1418) in paragraph at lines 360--360
 \T1/cmtt/m/n/12 1016 / j . snb . 2017 . 03 . 035$\T1/stix/m/n/12 . \T1/stix/m/s
 c/12 url\T1/stix/m/n/12 :
  []
 
-)
-
-Package caption Warning: Unused \captionsetup[table] on input line 30.
-See the caption package documentation for explanation.
-
-
+) 
 AED: lastpage setting LastPage
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1915,18 +1945,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[7
-
-] (./report_curve-fitting.aux)
+[7] (./report_curve-fitting.aux)
 Package logreq Info: Writing requests to 'report_curve-fitting.run.xml'.
 \openout1 = `report_curve-fitting.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46454 strings out of 478579
- 1066352 string characters out of 5857457
- 1719993 words of memory out of 5000000
- 63642 multiletter control sequences out of 15000+600000
+ 46465 strings out of 478579
+ 1066533 string characters out of 5857457
+ 1722192 words of memory out of 5000000
+ 63653 multiletter control sequences out of 15000+600000
  501869 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,19n,97p,1890b,1670s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1940,10 +1968,10 @@ sftt1200.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/stix/stix-mathex.pf
 b><c:/texlive/2021/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb><c:/texli
 ve/2021/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb><c:/texlive/2021/tex
 mf-dist/fonts/type1/public/stix/stix-mathtt.pfb>
-Output written on report_curve-fitting.pdf (7 pages, 2038933 bytes).
+Output written on report_curve-fitting.pdf (7 pages, 2121414 bytes).
 PDF statistics:
- 601 PDF objects out of 1000 (max. 8388607)
- 487 compressed objects within 5 object streams
+ 610 PDF objects out of 1000 (max. 8388607)
+ 493 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  128 words of extra memory for PDF output out of 10000 (max. 10000000)
 

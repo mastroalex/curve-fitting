@@ -1,6 +1,6 @@
 \section{Introduzione}
 
-I sistemi per l'analisi microfluidica a singola cellula richiedono soluzioni tecnologiche per contare, intrappolare, focalizzare, separare e identificare le proprietà della cellula. 
+I sistemi per l'analisi microfluidica implementano soluzioni tecnologiche per contare, intrappolare, focalizzare, separare e identificare le proprietà della cellula. 
 
 Possono essere identificate le proprietà di singole cellule basandosi su differenze nelle dimensioni e nelle proprietà dielettriche, sfruttando tecniche non invasive e senza richiedere l'ausilio di labelling cellulare.
 
@@ -26,11 +26,11 @@ Tale tecnica di compensazione sfrutta la dipendenza del diametro elettrico dal p
 	\includegraphics[width=.95\linewidth]{signal_visualization_fig.pdf}
 	\caption{}
 \end{subfigure}
-\caption{Schema rappresentativo il citometro ad impedenza con la configurazione di elettrodi selezionata e la cellula passante (a); segnali della corrente differenziale misurata per 5 diversi campioni (b)}
+\caption{Schema rappresentativo del citometro ad impedenza con la configurazione di elettrodi selezionata e la cellula passante (a); segnali della corrente differenziale misurata per 5 diversi campioni (b)}
 \label{fig:generale}
 \end{figure*}
 
-Il citometro ad impedenza è un dispositivo microfluidico utilizzato per misurare il campo elettrico all'interno di un microcanale dove passa una cellula. La cellula attraversa no specifico pattern di elettrodi sul quale viene applicata un tensione alternata e questo porta ad una variazione della corrente misurata.
+Il citometro ad impedenza è un dispositivo microfluidico utilizzato per misurare le perturbazioni del campo elettrico all'interno di un microcanale dove passa una cellula. La cellula attraversa uno specifico pattern di elettrodi sul quale viene applicata un tensione alternata e questo porta ad una variazione della corrente misurata.
 
 Ovvero si considera un microcanale riempito di un buffer conduttivo al cui interno passano delle correnti elettriche. Nel dispositivo in questione si applica un potenziale all'elettrodo centrale e si misura una corrente differenziale tra i due elettrodi laterali.
 
@@ -40,14 +40,14 @@ Nel seguente report viene considerata una configurazione ad elettrodi coplanari 
 
 Tramite la misura di corrente differenziale è possibile stimare alcune proprietà della cellula che passa nel canale. In particolare, al passaggio delle cellula, si misura un segnale con una forma d'onda di tipo gaussiana bipolare.
 
-Tramite l'ampiezza di picco è possibile stimare il diametro. Il segnale è proporzionale al volume della cellula per cui il diametro sarà legato all'ampiezza del segnale ($a$) come:
+Tramite l'ampiezza di picco è possibile stimare il diametro elettrico. Il segnale è proporzionale al volume della cellula per cui il diametro sarà legato all'ampiezza del segnale ($a$) come:
 
 
 \begin{equation}
 	D=G a^{1 / 3}
 \end{equation}
 
-Dove $G$ è un guadagno che risente delle proprietà elettriche del citometro.
+Dove $G$ è un guadagno che risente delle proprietà elettriche specifiche del dispositivo utilizzato.
 
 \subsection{Gaussiana bipolare}
 
@@ -67,23 +67,29 @@ La gaussiana bipolare è una forma d'onda caratteristica composta da due gaussia
 	\label{eq:gaussianabipolare}
 \end{equation}
 
-Ovvero, considerata un'ampiezza di riferimento $a$ (i.e. il valore massimo di picco), è la somma di due gaussiane nel tempo di cui la seconda ribaltata. La distanza picco-picco è pari a $\delta$ e si introduce un parametro di centratura $t_c$. Le due gaussiane condividono la medesima deviazione standard $\sigma$ e sono identificate dalle equazioni:
+Ovvero, considerata un'ampiezza di riferimento $a$ (i.e. il valore massimo di picco), la forma d'onda complessiva è data dalla somma di due gaussiane nel tempo di cui la seconda ribaltata. 
+
+La distanza picco-picco è pari a $\delta$ e si introduce un parametro di centratura $t_c$. 
+
+Le due gaussiane condividono la medesima deviazione standard $\sigma$ e sono identificate dalle \cref{eq:gaussiana1} e \cref{eq:gaussiana2}.
 
 \begin{equation}
 	g_{+}(t)=\frac{-\left(t-\left(t_{c} +(\delta / 2)\right)\right)^{2}}{2 \sigma^{2}}
+	\label{eq:gaussiana1}
 \end{equation}
 
-E:
+
 
 \begin{equation}
 	g_{-}(t)=\frac{-\left(t-\left(t_{c} -(\delta / 2)\right)\right)^{2}}{2 \sigma^{2}}
+		\label{eq:gaussiana2}
 \end{equation} 
 
 \subsection{Procedura di fitting}
 
 Partendo dai dati sperimentali è necessario introdurre una procedura di fitting numerico per identificare la gaussiana, e quindi i suoi quattro parametri descrittivi, tale da rappresentare il segnale analizzato \cite{caselli_simple_2016}.
 
-Tale procedura di fitting viene implementata secondo un algoritmo di ottimizzazione. Ovvero, si cerca di ridurre la differenza tra il dato misurato $[d]_i$ e il template di fitting ($g$) allo stesso instante temporale. 
+Tale procedura di fitting viene implementata secondo un algoritmo di ottimizzazione. Ovvero, si cerca di ridurre la differenza tra il dato misurato $[d]_i$ e il template di fitting $g(t_i)$ allo stesso instante temporale. 
 
 Definita la funzione di errore come tale differenza:
 
@@ -109,13 +115,19 @@ Ovvero, a parità di diametro, una cellula passante vicino agli elettrodi darà 
 
 Nonostante nella configurazione utilizzata non si può avere una misura diretta della posizione all'interno del canale è possibile ottenerne una stima effettuando una compensazione del segnale tenendo conto della correlazione tra la posizione e lo shape parameters.
 
-In particolare, risulta valida la relazione tra il parametro di forma $\sigma \over \delta$ e il diametro normalizzato che segue una legge lineare:
+In particolare, risulta valida la relazione tra il parametro di forma $\mathtt{shape}$ e il diametro normalizzato che segue una legge lineare:
 \begin{equation}
 	{D\over d}={c_1+c_2\left(\sigma \over \delta \right)}
 	\label{eq:compensazione}
 \end{equation}
 
-Si possono quindi usare tali coefficienti della retta per correggere il diametro elettrico togliendo l'effetto di posizione \cite{errico_mitigating_2017}.
+Dove:
+
+\begin{equation}
+	{\sigma \over \delta} = \mathtt{shape}
+\end{equation}
+
+Si possono quindi usare tali coefficienti della retta, calcolati per ogni segnale, per correggere il diametro elettrico rimuovendo l'effetto di posizione \cite{errico_mitigating_2017}.
 
 
 %\begin{figure}[t!]
@@ -137,15 +149,19 @@ Si possono quindi usare tali coefficienti della retta per correggere il diametro
 
 \subsection{Dataset di riferimento}
 
-Il dataset di riferimento è un insieme di dati grezzi di citometro ad impedenza.  
-
-Per il dispositivo in questione il guadagno è pari a 10.5 $\mu$m / A\textsuperscript{1/3}. I segnali sono campionati con una frequenza $f_s=115$ kHz con un totale di oltre 50.000 segnali.
+Il dataset di riferimento è un insieme di dati grezzi ottenuti da misurazioni di citometria ad impedenza su un campione di biglie di test. 
 
 Sono presenti i segnali di tre famiglie di biglie di test con diametro nominale di $5.2,\:6\text{ e }7 \mu m$. 
 
+Per il dispositivo in questione il guadagno è pari a 10.5 $\mu$m / A\textsuperscript{1/3} e la distanza inter-elettrodo è pari a $L=40\: \mu m$. 
+
+I segnali sono campionati con una frequenza $f_s=115$ kHz con un totale di oltre 50.000 segnali.
+
+
+
 \section{Risultati}
 
-Inizialmente la procedura viene applicata su un dataset ristretto considerando 400 segnali. Vengono selezionati quindi i segnali di indice da 400 a 800.
+Inizialmente la procedura viene applicata su un dataset ristretto considerando solamente 400 segnali. Vengono selezionati quindi i segnali di indice da 400 a 800.
 
 Successivamente la procedura verrà applicata anche su un riferimento più esteso.
 
@@ -155,11 +171,11 @@ A partire dal singolo segnale all'interno dell'intero dataset è possibile fitta
 
 Considerando il template in \cref{eq:gaussianabipolare} è possibile utilizzare il comando Matlab \texttt{fit()} fornendo il template stesso, i dati e i valori iniziali per la stima ai minimi quadrati.
 
-Inoltre, essendo il segnale molto piccolo $\propto 10^{-6}$ è utile normalizzare il segnale di ampiezza e scalare l'asse dei tempi riportandolo in secondi nel range $[0;\:{1\over f_s}]$, dove $f_s$ è la frequenza di campionamento il cui inverso indica l'ultimo campione temporale.
+Inoltre, essendo il segnale molto piccolo $\propto 10^{-6}$ è utile normalizzare il segnale di ampiezza e scalare l'asse dei tempi riportandolo in secondi nel range $[0;\:{1\over f_s}]$ con un numero di campioni equivalente, dove $f_s$ è la frequenza di campionamento il cui inverso indica l'ultimo campione temporale.
 
-A questo deve seguire poi necessariamente una riscalatura nel dominio originario. 
+A questo deve seguire poi necessariamente una riscalatura nel dominio originario per poter confrontare i segnali ed effettuare la procedura di compensazione correttamente.
 
-Un esempio di fitting è presente in \cref{fig:fitted}.
+Un esempio di fitting è presente in \cref{fig:fitted} ed è evidente come la gaussiana bipolare sia descrittiva del segnale misurato.
 
 \begin{figure}[t!]
 	\centering
@@ -174,6 +190,7 @@ Un esempio di fitting è presente in \cref{fig:fitted}.
 		\centering
 		\includegraphics[width=0.9\linewidth]{histogram_figs}
 		\caption{}
+		\label{fig:histo}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.5\linewidth}
 		\centering
@@ -259,9 +276,11 @@ Un esempio di fitting è presente in \cref{fig:fitted}.
 \end{figure*}
 
 
-Per la procedura di compensazione è necessario stimare i coefficienti di un fitting lineare. Tale fitting deve essere fatto nello spazio $[{\delta\over \sigma};\:{D\over d}$] ed è quindi necessario normalizzare i diametri elettrici rispetto i singoli diametri nominali delle tre famiglie. 
+Per la procedura di compensazione è necessario stimare i coefficienti della retta derivante dal fitting lineare. 
 
-Dallo scatter plot del diametro elettrico vs shape parameters è possibile distinguere tre famiglie (\cref{fig:scatter_init}). Mediante la funzione \texttt{inpolygon()} è possibile selezionare separatamente i valori corrispondenti alle tre famiglie e quindi normalizzarle per il rispettivo diametro nominale. 
+Tale fitting deve essere fatto nello spazio $[{\delta\over \sigma};\:{D\over d}$] ed è quindi necessario normalizzare i diametri elettrici rispetto i singoli diametri nominali delle tre famiglie. 
+
+Bensì in questo dataset non sia possibile identificare a priori, con una procedura automatica, la famiglia di appartenenza della misura si può sfruttare lo scatter plot del diametro elettrico vs shape parameters per distinguere visivamente tre famiglie (\cref{fig:scatter_init}). Quindi, mediante la funzione \texttt{inpolygon()} è possibile selezionare manualmente i valori corrispondenti alle tre famiglie, separarle e quindi normalizzarle per il rispettivo diametro nominale. 
 
 Quindi è possibile calcolare la retta che meglio approssima l'andamento dello shape parameter in funzione del diametro elettrico normalizzato (\cref{fig:normalized}). Dunque è possibile estrarre i coefficienti:
 \begin{itemize}
@@ -269,16 +288,42 @@ Quindi è possibile calcolare la retta che meglio approssima l'andamento dello s
 	\item $\mathtt{c2}=-6.20$
 \end{itemize}
 
-E il coefficiente di determinazione $\mathtt{r}^2=0.96$. 
+All'interno dell'ambiente Matlab è possibile utilizzare il comando \texttt{fitlm()} così da ottenere direttamente i due coefficienti della retta e anche una stima del coefficiente di determinazione $\mathtt{r}^2=0.96$. 
 
 Tramite tali coefficienti è possibile correggere i valori tramite l'\cref{eq:compensazione}.
 
 Si ottengono quindi le famiglie separate sia nello scatter plot dello shape parameter che della velocità, in \cref{fig:scatter} e \cref{fig:velocity}.
 
-
-\textcolor{blue}{\lipsum[1-2]}
+\begin{table}[b!]
+	\centering
+	\begin{tabular}{|c|p{ 1.5 cm}|c|p{1.9 cm}|p{ 1.4 cm}|}
+		\hline
+		& \footnotesize{Deviazione standard} & \footnotesize{Media} & \footnotesize{Coefficiente di variazione} & \footnotesize{Diametro nominale} \\
+		\hline
+		\# 1 & 0.187 & 5.196 & 0.035 & 5.2 $\mu m$ \\
+		\hline
+		\# 2 & 0.184 & 6.016 & 0.031 & 6 $\mu m$\\
+		\hline
+		\# 3 & 0.205 & 7.005 & 0.029 & 7 $\mu m$\\
+		\hline
+	\end{tabular}
+	\caption{Coefficienti della distribuzione gaussiana per le tre famiglie ottenuti dal fitting dei valori dell'istogramma}
+	\label{tab:fithist}
+\end{table}
 
 \subsection{Distribuzioni}
+
+Chiaramente tale procedura, separando le famiglie, permette il calcolo della loro distribuzione.
+
+Analizzando la distribuzione dei segnali, prima della compensazione, è evidente come non sia possibile identificare alcun picco nel grafico dell'istogramma in \cref{fig:histo}. 
+Questo grafico è pienamente rappresentativo di come i segnali siano effettivamente mischiati a causa del contributo di posizione.
+
+Dopo la compensazione, invece, è chiaramente possibile distinguere le diverse famiglie come è evidente dai tre picchi nettamente distinguibili in \cref{fig:histogram}.
+
+Vengono riportate quindi le distribuzioni delle tra famiglie ciascuna con un andamento a gaussiana in cui parametri sono presenti in \cref{tab:fithist}.
+
+
+
 
 \begin{figure}[b!]
 	\centering
@@ -288,8 +333,6 @@ Si ottengono quindi le famiglie separate sia nello scatter plot dello shape para
 \end{figure}
 
 
-
-PARLA DELLA SEPARAZIONE DEGLI ISTOGRAMMI E DELLE FAMIGLIE + TABELLA
 
 
 
