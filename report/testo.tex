@@ -188,50 +188,45 @@ Un esempio di fitting è presente in \cref{fig:fitted} ed è evidente come la ga
 	\centering
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=0.9\linewidth]{histogram_figs}
+		\includegraphics[width=0.8\linewidth]{histogram_figs}
 		\caption{}
 		\label{fig:histo}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=0.9\linewidth]{histogram_corrected2_fig}
+		\includegraphics[width=0.8\linewidth]{histogram_corrected2_fig}
 		\caption{}
 	\end{subfigure}
-	\caption{}
+	\caption{Distribuzione dei diametri elettrici rappresentata con un istogramma prima della correzione (a) e dopo la procedura di compensazione (b). Sono evidenti le tre famiglie distinte dopo la procedura di compensazione.}
 	\label{fig:histogram}
-\end{figure*}
-
-\begin{figure*}[t!]
+	\vspace{0.5cm}
 	\centering
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=0.9\linewidth]{scatter_fig}
+		\includegraphics[width=0.8\linewidth]{scatter_fig}
 		\caption{}
 		\label{fig:scatter_init}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=0.9\linewidth]{scatter_corrected2_fig}
+		\includegraphics[width=0.8\linewidth]{scatter_corrected2_fig}
 		\caption{}
 	\end{subfigure}
-	\caption{}
+	\caption{Scatter plot dello shape parameter rispetto al diametro elettrico prima (a) e dopo (b) la compensazione. La procedura di compensazione porta ad una netta distinzione delle tre famiglie. Si passa da tre bande diagonali, dove è impossibile stabilire il diametro senza portare in conto l'incertezza del contributo posizionale, a tre bande verticali che chiaramente separano le tre differenti famiglie. }
 	\label{fig:scatter}
-\end{figure*}
-
-
-\begin{figure*}[t!]
+		\vspace{0.5cm}
 	\centering
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=0.9\linewidth]{velocity_fig}
+		\includegraphics[width=0.8\linewidth]{velocity_fig}
 		\caption{}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.5\linewidth}
 		\centering
-		\includegraphics[width=0.9\linewidth]{velocity_corrected_fig}
+		\includegraphics[width=0.8\linewidth]{velocity_corrected_fig}
 		\caption{}
 	\end{subfigure}
-	\caption{}
+	\caption{Scatter plot della velocità rispetto al diametro elettrico prima (a) e dopo (b) la compensazione. Si vede come la procedura di compensazione porta ad una netta distinzione delle tre famiglie che nel caso pre-compensazione non era presente.}
 	\label{fig:velocity}
 \end{figure*}
 
@@ -260,6 +255,7 @@ Un esempio di fitting è presente in \cref{fig:fitted} ed è evidente come la ga
 		\centering
 		\includegraphics[width=0.9\linewidth]{histogram_corrected_fig}
 		\caption{}
+		\label{fig:hist_Sep}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.33\linewidth}
 		\centering
@@ -271,7 +267,7 @@ Un esempio di fitting è presente in \cref{fig:fitted} ed è evidente come la ga
 		\includegraphics[width=0.9\linewidth]{density_diam_corr_velocity}
 		\caption{}
 	\end{subfigure}
-	\caption{}
+	\caption{Analisi su 35000 campioni. Viene nuovamente applicata la procedura di test ma su un numero di segnali maggiori la cui distribuzione è presentata tramite istogramma (a). Considerando molti segnali risultano statisticamente evidenti i picchi relativi alle tre famiglie ma non è possibile distinguere nettamente i segnali. La distinzione invece appare netta ed evidente dopo la compensazione (d). Sono riportati anche i plot di densità per lo shape parameters rispetto al diametro elettrico prima (b) e dopo (e) la compensazione e per la velocità rispetto al diametro elettrico prima (c) e dopo (f) la compensazione. Dai diagrammi di densità risulta evidente la netta separazione che viene segue alla procedura di compensazione. }
 	\label{fig:density}
 \end{figure*}
 
@@ -320,15 +316,14 @@ Questo grafico è pienamente rappresentativo di come i segnali siano effettivame
 
 Dopo la compensazione, invece, è chiaramente possibile distinguere le diverse famiglie come è evidente dai tre picchi nettamente distinguibili in \cref{fig:histogram}.
 
-Vengono riportate quindi le distribuzioni delle tra famiglie ciascuna con un andamento a gaussiana in cui parametri sono presenti in \cref{tab:fithist}.
-
+Vengono riportate quindi le distribuzioni delle tra famiglie ciascuna con un andamento a gaussiana in cui parametri sono presenti in \cref{tab:fithist}. Risulta evidente come la maggioranza delle biglie rientrano nella terza famiglia, a diametro maggiore, ma tale valore rispecchia anche una maggiore dispersività. Le due famiglie a dietro più piccolo presentano invece una dispersione confrontabile.
 
 
 
 \begin{figure}[b!]
 	\centering
 	\includegraphics[width=0.9\linewidth]{normalized_D}
-	\caption{}
+	\caption{Grafico di densità della distribuzione dei segnali del parametro di forma rispetto al diametro normalizzato. Sono presenti i dati di tutte e tre le famiglie con la retta interpolante unica.}
 	\label{fig:normalizedDensity}
 \end{figure}
 
@@ -343,12 +338,27 @@ Vengono riportate quindi le distribuzioni delle tra famiglie ciascuna con un and
 
 La stessa procedura può essere applicata anche su una quantità di segnali notevolmente maggiore. Vengono quindi considerati, nello stesso dataset di riferimento, i segnali di indice a 200 a 35200. 
 
-La procedura può essere applicata allo stesso modo ma gli scatter plot vengono sostituiti da plot di densità che permettono di osservare meglio la distribuzione dei valori.
+La procedura può essere applicata allo stesso modo ma gli scatter plot vengono sostituiti da plot di densità che permettono di osservare meglio la distribuzione dei valori (\cref{fig:density}).
+
+Nuovamente si ottengono i due parametri di fitting $c_1=2.63$, $c_2=-6.28$ tramite i quali applicare la procedura di compensazione.
+
+In modo analogo segue l'istogramma dove si separano le tre famiglie (\cref{fig:hist_Sep}). In questo caso la maggioranza delle biglie rientrano comunque nella famiglia con diametro maggiore ma la famiglia con diametro più piccolo presenta una maggiore dispersione. 
+
 
 
 \section{Conclusioni}
-\textcolor{blue}{\lipsum[1]}
 
+La procedura di compensazione permette di separare le differenti famiglie rispetto al diametro elettrico e risulta affidabile sia su pochi segnali che su campioni più vasti.
+
+Tale procedura richiede di conoscere preventivamente i diametri delle biglie. 
+
+Nel caso in cui i singoli segnali non siano associabili al relativo diametro nominale con certezza viene richiesta una procedura manuale di identificazione che, per sua natura, indurrà un certo errore nella classificazione e nel fitting lineare, quindi sulla procedura di compensazione. 
+
+Tale errore si riflette principalmente in una dispersione nelle distribuzioni delle biglie. La deviazione standard delle distribuzioni delle famiglie rimane sotto lo 0.23 e macroscopicamente rimangono fortemente distinguibili le tre famiglie e le loro distribuzioni. 
+
+Chiaramente, a causa dell'errore numerico presente e della grande quantità di outliers, non è facile classificare il singolo segnale quanto classificare la distribuzione macroscopica.
+
+\raggedbottom
 \pagebreak
 \section*{Disponibilità dei dati}
 
