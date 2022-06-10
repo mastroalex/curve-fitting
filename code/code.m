@@ -1,3 +1,13 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Mastrofini Alessandro
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Medical Engineering - University of Rome Tor Vergata
+% Physiological Systems Modeling and Simulation
+% F. Caselli, MSSF A.Y. 2021/2022
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Curve fitting for impedance micro cytometers
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
 clear all; close all; clc
 %%
 load mistery.mat
